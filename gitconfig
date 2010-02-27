@@ -1,0 +1,11 @@
+[user]
+	name = Chris Mytton
+	email = chrismytton@gmail.com
+[core]
+	excludesfile = /Users/chris/.gitignore
+[github]
+	user = mytton
+[color]
+	branch = auto
+	diff = auto
+	status = auto

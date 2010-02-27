@@ -1,0 +1,3 @@
+# Searches history if text has been typed on the cmd line already
+"\e[B": history-search-forward
+"\e[A": history-search-backward
