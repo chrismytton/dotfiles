@@ -6,9 +6,6 @@ export VISUAL=$EDITOR
 # Use homebrew for RubyGems
 export GEM_HOME="`brew --prefix`/Cellar/gems/1.8"
 
-# Add the sbins to PATH
-export PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
-
 # If the user has a ~/.bin directory then add that to the path
 if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
