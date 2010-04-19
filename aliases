@@ -1,6 +1,7 @@
 alias l='ls'
 alias ls='ls -FG'
-alias ll='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
 alias lh='ls -ldF .*' # list hidden files only
 alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
 alias ...='.. ..'

@@ -3,9 +3,6 @@ export EDITOR='mate -w'
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
-# Use homebrew for RubyGems
-export GEM_HOME="`brew --prefix`/Cellar/gems/1.8"
-
 # If the user has a ~/.bin directory then add that to the path
 if [ -d ~/.bin ]; then
   export PATH=$HOME/.bin:$PATH
