@@ -24,7 +24,7 @@ alias js='rlwrap node-repl'
 
 # Source and edit profile
 alias sprof='source ~/.bash_profile'
-alias eprof="mate ~/Code/dotfiles/"
+alias eprof="mate ~/Code/DotFiles/"
 
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"

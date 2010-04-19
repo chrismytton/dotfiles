@@ -1,3 +1,5 @@
 .DS_Store
 .svn
 Thumbs.db
+tmp/**/*
+.localized

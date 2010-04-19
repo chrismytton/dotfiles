@@ -7,7 +7,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
   
   # Homebrew bash_completion
-  source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+  . `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 fi
 
 # -- start rip config -- #

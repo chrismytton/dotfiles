@@ -1,12 +1,8 @@
-# Use the github `hub` command (a simple wrapper around git) `brew install hub`
-# alias git='hub'
-
 alias gi='git init'
 alias gst='git status'
-alias gl='git pull --rebase'
 alias gp='git push'
 alias gpo='gp origin master'
-alias gd='git diff | mate'
+alias gd='git diff | gitx'
 alias ga='git add'
 alias gcl='git config --list'
 alias gc='git commit -v'
@@ -14,6 +10,7 @@ alias gca='git commit -v -a'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gco='git checkout'
-alias gdc='git-svn dcommit'
 
-alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
+# git-svn compatibility
+alias gsd='git svn dcommit'
+alias gsr='git svn rebase'
