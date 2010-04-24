@@ -21,6 +21,9 @@ export PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")]\n$ '
 # Use colour on the cmd line
 export CLICOLOR=1
 
+# Bazaar (and therefore sometime homebrew) won't work without this
+export PYTHONPATH="/usr/local/lib/python2.6/site-packages"
+
 # Lots of history
 export HISTSIZE=1000000
 
