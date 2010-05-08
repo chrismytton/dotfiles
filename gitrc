@@ -1,3 +1,5 @@
+alias git=hub
+
 alias gi='git init'
 alias gst='git status'
 alias gp='git push'
