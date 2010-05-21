@@ -13,6 +13,7 @@ alias gca='git commit -v -a'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gco='git checkout'
+alias gpr='git pull --rebase'
 
 # git-svn compatibility
 alias gsd='git svn dcommit'
