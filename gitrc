@@ -14,6 +14,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gco='git checkout'
 alias gpr='git pull --rebase'
+alias gx=gitx
 
 # git-svn compatibility
 alias gsd='git svn dcommit'
