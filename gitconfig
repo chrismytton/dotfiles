@@ -4,7 +4,7 @@
 [core]
 	excludesfile = /Users/chris/.gitignore
 [github]
-	user = mytton
+	user = hecticjeff
 [color]
 	branch = auto
 	diff = auto
