@@ -19,7 +19,7 @@ export RIPDIR RUBYLIB PATH
 # -- end rip config -- #
 
 # Set prompt format
-export PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")] $(~/.rvm/bin/rvm-prompt i v 2> /dev/null)\n$ '
+export PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")] $(~/.rvm/bin/rvm-prompt 2> /dev/null)\n$ '
 
 # Use colour on the cmd line
 export CLICOLOR=1
