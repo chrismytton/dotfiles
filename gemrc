@@ -1,7 +1,0 @@
---- 
-:update_sources: true
-gem: -n/usr/local/bin
-:backtrace: false
-:verbose: true
-:bulk_threshold: 1000
-:benchmark: false
