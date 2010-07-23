@@ -17,3 +17,7 @@ bind "set show-all-if-ambiguous On" # automatic completion without double tab
 
 shopt -s checkwinsize
 shopt -s histappend
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
