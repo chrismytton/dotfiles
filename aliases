@@ -31,6 +31,9 @@ alias eprof="mate ~/Code/DotFiles/"
 alias aconf="mate /etc/apache2/users/$USER.conf"
 alias arst='sudo apachectl restart'
 
+# Website sucker
+alias sitesuck='wget -np -r -p'
+
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 
