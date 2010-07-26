@@ -1,7 +1,7 @@
 # alias git=hub
 
 alias gi='git init'
-alias gst='git status'
+alias gst='git status -sb'
 alias gp='git push'
 alias gpo='gp origin master'
 alias gd='git diff | gitx'
