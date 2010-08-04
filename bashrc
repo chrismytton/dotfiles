@@ -21,3 +21,5 @@ shopt -s histappend
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
+[[ -f $HOME/.work ]] && source $HOME/.work
