@@ -23,3 +23,5 @@ shopt -s histappend
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 [[ -f $HOME/.work ]] && source $HOME/.work
+
+screen -RD
