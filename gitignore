@@ -4,4 +4,4 @@ Thumbs.db
 tmp/**/*
 .localized
 .rvmrc
-*.swp
+*.sw*
