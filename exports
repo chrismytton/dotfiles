@@ -9,7 +9,7 @@ if [ -d ~/.bin ]; then
 fi
 
 # Make sure the /usr/local bins are at the top of the path
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/Cellar/node/0.2.0/bin:$PATH"
 
 # -- start rip config -- #
 RIPDIR="~/.rip"
