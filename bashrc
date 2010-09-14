@@ -23,3 +23,9 @@ shopt -s histappend
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 [[ -f $HOME/.work ]] && source $HOME/.work
+
+# Google Go Compat
+export GOROOT=`brew --cellar`/go/HEAD
+export GOBIN=/usr/local/bin
+export GOARCH=amd64
+export GOOS=darwin
