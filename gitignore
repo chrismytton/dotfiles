@@ -3,5 +3,9 @@
 Thumbs.db
 tmp/**/*
 .localized
+.rspec
+.vagrant
+Vagrantfile
+.zfproject.xml
+nbproject
 .rvmrc
-*.sw*
