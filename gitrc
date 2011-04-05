@@ -1,4 +1,4 @@
-alias git=hub
+# alias git=hub
 
 alias gi='git init'
 alias gst='git status -sb'
