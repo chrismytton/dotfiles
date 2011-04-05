@@ -1,38 +1,9 @@
-# paths
-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-
-if [ -d "/usr/local" ]; then
-  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# prompt
+if [[ `whoami` == "root" ]]; then
+  PS1="# "
+else
+  PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")] $(~/.rvm/bin/rvm-prompt 2> /dev/null)\n$ '
 fi
-
-if [ -d $HOME/.bin ]; then
-  PATH="$HOME/.bin:$PATH"
-fi
-
-MANPATH="/usr/share/man:/usr/local/share/man"
-
-export PATH MANPATH
-
-export EDITOR='vim'
-export GIT_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-
-
-# -- start rip config -- #
-RIPDIR="~/.rip"
-RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
-PATH="$PATH:$RIPDIR/active/bin"
-export RIPDIR RUBYLIB PATH
-# -- end rip config -- #
-
-# Set prompt format
-export PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")] $(~/.rvm/bin/rvm-prompt 2> /dev/null)\n$ '
-
-# Use colour on the cmd line
-export CLICOLOR=1
-
-# Bazaar (and therefore sometime homebrew) won't work without this
-export PYTHONPATH="/usr/local/lib/python2.6/site-packages"
 
 # Lots of history
 export HISTSIZE=1000000

@@ -1,4 +1,5 @@
-source ~/.exports
+source ~/.bash/env
+source ~/.bash/config
 source ~/.aliases
 source ~/.gitrc
 
