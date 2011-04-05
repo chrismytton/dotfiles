@@ -8,6 +8,14 @@ fi
 # Lots of history
 export HISTSIZE=1000000
 
+# readline settings
+bind "set completion-ignore-case on" 
+bind "set bell-style none"
+bind "set show-all-if-ambiguous On" # automatic completion without double tab
+
+shopt -s checkwinsize
+shopt -s histappend
+
 # Colours
 export COLOR_NC='\e[0m' # No Color
 export COLOR_WHITE='\e[1;37m'
