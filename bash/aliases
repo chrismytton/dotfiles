@@ -19,9 +19,6 @@ alias pubkey='cat ~/.ssh/*.pub | pbcopy && echo "Keys copied to clipboard"'
 # replacement netstat cmd to find ports used by apps on OS X
 alias netstat="sudo lsof -i -P"
 
-# check for node and create js-repl if it's available
-command -v node-repl > /dev/null && command -v rlwrap > /dev/null && alias js='rlwrap node-repl'
-
 # Source and edit profile
 alias sprof='source ~/.bash_profile'
 alias eprof="mate ~/Code/DotFiles/"
