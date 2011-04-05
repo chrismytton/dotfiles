@@ -1,8 +1,10 @@
+EXCLUDES = %w[Rakefile README.md removedotfiles.sh gitconfig]
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README.md removedotfiles.sh gitconfig].include? file
+    next if EXCLUDES.include? file
 
     original = File.join(ENV['HOME'], ".#{file}")
 
