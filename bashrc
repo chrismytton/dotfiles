@@ -1,6 +1,6 @@
 source ~/.bash/env
 source ~/.bash/config
-source ~/.aliases
+source ~/.bash/aliases
 source ~/.gitrc
 
 # bash_completion
