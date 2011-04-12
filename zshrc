@@ -1,7 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="hecticjeff"
-plugins=(git git-flow rails3 vagrant bundler command-not-found)
+plugins=(git git-flow rails3 vagrant bundler)
 source $ZSH/oh-my-zsh.sh
 
 # paths
@@ -25,8 +25,8 @@ export PATH MANPATH
 
 # linux
 if [[ $OSTYPE == 'linux-gnu' ]]; then
-  alias gst='git status -s'
   alias o=gnome-open
+  alias gx=gitg
 fi
 
 export EDITOR='vim -f'
@@ -38,6 +38,9 @@ secureme () {
   echo "[$1:$2] Switching to secure ssh connection...remember to change proxy settings"
   ssh -CND $2 $1
 }
+
+# node
+export NODE_PATH=/usr/local/lib/node
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
