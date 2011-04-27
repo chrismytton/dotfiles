@@ -11,6 +11,8 @@ if [[ -d "/usr/local" ]]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
+MANPATH="/usr/share/man:/usr/local/share/man"
+
 # Scan folders in ~/local and add to path
 # Mostly stolen from http://blog.nodejs.org/2011/04/04/development-environment/
 if [[ -d "$HOME/local" ]]; then
@@ -28,8 +30,6 @@ fi
 if [[ -d "$HOME/.bin" ]]; then
   PATH="$HOME/.bin:$PATH"
 fi
-
-MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH MANPATH
 
