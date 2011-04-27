@@ -49,8 +49,5 @@ secureme () {
   ssh -CND $2 $1
 }
 
-# node
-export NODE_PATH=/usr/local/lib/node
-
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
