@@ -24,7 +24,6 @@ if [[ -d "$HOME/local" ]]; then
     [ -d $i/lib ] && LD_LIBRARY_PATH="${i}/lib:${LD_LIBRARY_PATH}"
     [ -d $i/lib/pkgconfig ] && PKG_CONFIG_PATH="${i}/lib/pkgconfig:${PKG_CONFIG_PATH}"
     [ -d $i/share/man ] && MANPATH="${i}/share/man:${MANPATH}"
-    [ -d $i/lib/node_modules ] && NODE_PATH="${i}/lib/node_modules:${NODE_PATH}"
   done
 fi
 
@@ -32,7 +31,7 @@ if [[ -d "$HOME/.bin" ]]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-export PATH MANPATH NODE_PATH
+export PATH MANPATH
 
 # linux
 if [[ $OSTYPE == 'linux-gnu' ]]; then
