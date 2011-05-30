@@ -6,7 +6,7 @@ DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/Dropbox/.dotfiles"}
 # Run the script from the dotfiles directory
 cd $DOTFILE_DIR
 
-echo "installing dotfiles"
+echo "upgrading dotfiles"
 
 # global flags for installing dotfiles
 skip_all=false
