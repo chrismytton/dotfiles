@@ -8,6 +8,9 @@ cd $DOTFILE_DIR
 
 echo "upgrading dotfiles"
 
+# get the latest code
+git pull origin master
+
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false
