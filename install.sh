@@ -48,4 +48,4 @@ remote_install ack http://betterthangrep.com/ack-standalone
 remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac72dc832e4c7193f5193/license
 
 # upgrade
-. "$DOTFILE_DIR/upgrade.sh"
+OVERWRITE_OPTION='B' . "$DOTFILE_DIR/upgrade.sh"

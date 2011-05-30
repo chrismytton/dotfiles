@@ -33,9 +33,13 @@ do
     # check that we're not already on an *all* flag
     if ( ! $overwrite_all && ! $backup_all ); then
 
-      # ask the user how they want to proceed
-      echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all: "
-      read confirm
+      if [ "$OVERWRITE_OPTION" ]; then
+        confirm=$OVERWRITE_OPTION
+      else
+        # ask the user how they want to proceed
+        echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all: "
+        read confirm
+      fi
 
       # check the user's choice
       case "$confirm" in
@@ -48,10 +52,10 @@ do
       esac
     fi
 
-    # just exit the script if we're skipping all
+    # break out of the loop if we're skipping all
     if ( $skip_all ); then
       echo "skipping all"
-      exit 0
+      break
     fi
 
     # continue to the next file if we're skipping this one
@@ -59,15 +63,15 @@ do
       echo "skipping $target"
       continue
     fi
+  fi
 
-    # move the file out of the way if the user wants to backup
-    if ( $backup || $backup_all ); then
-      echo "backing up $target"
-      mv "$target" "$target.backup"
-    elif ( $overwrite || $overwrite_all ); then
-      echo "removing $target"
-      rm -rf "$target"
-    fi
+  # move the file out of the way if the user wants to backup
+  if ( $backup || $backup_all ); then
+    echo "backing up $target"
+    mv "$target" "$target.backup"
+  elif ( $overwrite || $overwrite_all ); then
+    echo "removing $target"
+    rm -rf "$target"
   fi
 
   # finally link in the file
@@ -79,4 +83,4 @@ done
 # install janus
 # TODO: this is a bit hit and miss at the moment due to gem permissions
 cd ~/.vim
-rake
+rake upgrade
