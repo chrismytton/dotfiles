@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 set -e
 
 DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/Dropbox/.dotfiles"}
