@@ -9,6 +9,9 @@ if [ ! -d "$DOTFILE_DIR" ]; then
   git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILE_DIR"
 fi
 
+# gitconfig
+. "$DOTFILE_DIR/gitconfig.sh"
+
 # oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
