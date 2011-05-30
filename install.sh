@@ -12,9 +12,6 @@ else
   git pull origin master
 fi
 
-# gitconfig
-. "$DOTFILE_DIR/gitconfig.sh"
-
 # oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
