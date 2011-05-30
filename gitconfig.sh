@@ -1,4 +1,7 @@
-if [ ! -f "$HOME/.gitconfig" ]; then
+#!/bin/sh
+set -e
+
+if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   echo "configuring ~/.gitconfig"
   echo -n "your full name: "
   read user_name
@@ -33,5 +36,5 @@ if [ ! -f "$HOME/.gitconfig" ]; then
   default = tracking
 GITCONFIG
 else
-  echo "existing ~/.gitconfig found, skipping"
+  echo "existing ~/.gitconfig found, use --force to override"
 fi
