@@ -12,14 +12,14 @@ fi
 # oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
-  git clone "https://github.com/$GITHUB_USER/oh-my-zsh" ~/.oh-my-zsh
+  git clone "https://github.com/hecticjeff/oh-my-zsh" ~/.oh-my-zsh
 fi
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
   echo "installing janus"
   for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
-  git clone "https://github.com/$GITHUB_USER/janus" ~/.vim
+  git clone "https://github.com/hecticjeff/janus" ~/.vim
   cd ~/.vim
   rake
 fi
