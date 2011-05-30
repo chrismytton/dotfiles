@@ -10,6 +10,47 @@ This is mostly just some custom settings for some excellent tools.
 
 ## Installation
 
+You need to make sure you have the following tools before starting
+
+* curl
+* git
+* zsh
+
+On os x curl and zsh are already there, so you just need git, I
+recommend [homebrew](https://github.com/mxcl/homebrew).
+
+For linux you will need to do this before starting:
+
+``` bash
+sudo apt-get install curl git zsh
+```
+
+This will get you installed with the dotfiles you are looking at, and
+will also install oh-my-zsh and janus.
+
 ``` bash
 curl https://github.com/hecticjeff/dotfiles/raw/master/install.sh | sh
+chsh -s /bin/zsh
 ```
+
+If that all sounds a bit too
+scary for you then take a look at `install.sh` to get an idea for what
+this script does.
+
+## Upgrading
+
+``` bash
+cd ~/.dotfiles
+sh upgrade.sh
+```
+
+## gitconfig
+
+To install a custom gitconfig which includes your github credentials:
+
+``` bash
+cd ~/.dotfiles
+sh gitconfig.sh
+```
+
+Copyright (c) Chris Mytton
