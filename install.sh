@@ -20,8 +20,6 @@ if [ ! -f "$HOME/.vim/README.markdown" ]; then
   echo "installing janus"
   for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
   git clone "https://github.com/hecticjeff/janus" ~/.vim
-  cd ~/.vim
-  rake
 fi
 
 # bin
@@ -50,3 +48,8 @@ remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac7
 
 # upgrade
 . "$DOTFILE_DIR/upgrade.sh"
+
+# install janus
+# TODO: this is a bit hit and miss at the moment due to gem permissions
+cd ~/.vim
+rake
