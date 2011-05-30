@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/Dropbox/.dotfiles"}
+DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
 
 # Run the script from the dotfiles directory
 cd $DOTFILE_DIR
