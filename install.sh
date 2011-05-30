@@ -30,20 +30,18 @@ fi
 
 # e.g `remote_install hub http://defunkt.io/hub/standalone`
 remote_install () {
+  echo "installing $1"
   curl $2 -sL > "$INSTALL_PREFIX/$1"
   chmod +x "$INSTALL_PREFIX/$1"
 }
 
 # hub
-echo "installing hub"
 remote_install hub http://defunkt.io/hub/standalone
 
 # ack
-echo "installing ack"
 remote_install ack http://betterthangrep.com/ack-standalone
 
 # licence
-echo "installing licence"
 remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac72dc832e4c7193f5193/license
 
 # upgrade
