@@ -1,8 +1,10 @@
 #!/bin/sh
 set -e
 
+DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/Dropbox/.dotfiles"}
+
 # Run the script from the dotfiles directory
-cd ~/Dropbox/.dotfiles
+cd $DOTFILE_DIR
 
 echo "installing dotfiles"
 
