@@ -49,8 +49,3 @@ remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac7
 
 # upgrade
 . "$DOTFILE_DIR/upgrade.sh"
-
-# install janus
-# TODO: this is a bit hit and miss at the moment due to gem permissions
-cd ~/.vim
-rake

@@ -75,3 +75,8 @@ do
   ln -s "$file" "$target"
 
 done
+
+# install janus
+# TODO: this is a bit hit and miss at the moment due to gem permissions
+cd ~/.vim
+rake
