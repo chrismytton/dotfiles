@@ -7,6 +7,9 @@ DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/Dropbox/.dotfiles"}
 if [ ! -d "$DOTFILE_DIR" ]; then
   echo "installing dotfiles"
   git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILE_DIR"
+else
+  cd "$DOTFILE_DIR"
+  git pull origin master
 fi
 
 # gitconfig
