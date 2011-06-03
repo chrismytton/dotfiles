@@ -13,6 +13,11 @@ else
 fi
 
 # oh-my-zsh
+# if there is a symlink there, remove it
+if [ -L "$HOME/.oh-my-zsh" ]; then
+  rm ~/.oh-my-zsh
+fi
+
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
   git clone "https://github.com/hecticjeff/oh-my-zsh" ~/.oh-my-zsh
