@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.hbs set filetype=hbs
+au BufRead,BufNewFile *.hbs set filetype=html
