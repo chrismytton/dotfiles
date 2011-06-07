@@ -30,27 +30,5 @@ if [ ! -f "$HOME/.vim/README.markdown" ]; then
   git clone "https://github.com/hecticjeff/janus" ~/.vim
 fi
 
-# bin
-INSTALL_PREFIX="$HOME/local/shared/bin"
-if [ ! -d $INSTALL_PREFIX ]; then
-  mkdir -p $INSTALL_PREFIX
-fi
-
-# e.g `remote_install hub http://defunkt.io/hub/standalone`
-remote_install () {
-  echo "installing $1"
-  curl $2 -sL > "$INSTALL_PREFIX/$1"
-  chmod +x "$INSTALL_PREFIX/$1"
-}
-
-# hub
-remote_install hub http://defunkt.io/hub/standalone
-
-# ack
-remote_install ack http://betterthangrep.com/ack-standalone
-
-# licence
-remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac72dc832e4c7193f5193/license
-
 # upgrade
 OVERWRITE_OPTION='B' . "$DOTFILE_DIR/upgrade.sh"

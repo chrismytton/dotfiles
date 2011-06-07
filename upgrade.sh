@@ -1,6 +1,28 @@
 #!/bin/sh
 set -e
 
+# bin
+INSTALL_PREFIX="$HOME/local/shared/bin"
+if [ ! -d $INSTALL_PREFIX ]; then
+  mkdir -p $INSTALL_PREFIX
+fi
+
+# e.g `remote_install hub http://defunkt.io/hub/standalone`
+remote_install () {
+  echo "installing $1"
+  curl $2 -sL > "$INSTALL_PREFIX/$1"
+  chmod +x "$INSTALL_PREFIX/$1"
+}
+
+# hub
+remote_install hub http://defunkt.io/hub/standalone
+
+# ack
+remote_install ack http://betterthangrep.com/ack-standalone
+
+# licence
+remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac72dc832e4c7193f5193/license
+
 DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
 
 # Run the script from the dotfiles directory
@@ -37,7 +59,7 @@ do
         confirm=$OVERWRITE_OPTION
       else
         # ask the user how they want to proceed
-        echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all: "
+        /bin/echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all: "
         read confirm
       fi
 
@@ -82,5 +104,9 @@ done
 
 # install janus
 # TODO: this is a bit hit and miss at the moment due to gem permissions
-cd ~/.vim
-rake upgrade
+/bin/echo -n "Upgrade janus? (y/n): "
+read upgrade_janus
+if [ "$upgrade_janus" = "y" ]; then
+  cd ~/.vim
+  rake upgrade
+fi
