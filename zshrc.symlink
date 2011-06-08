@@ -39,7 +39,7 @@ if [[ $OSTYPE == 'linux-gnu' ]]; then
   alias gx=gitg
 fi
 
-export EDITOR='vim -f'
+export EDITOR='vim'
 
 unsetopt auto_name_dirs
 
