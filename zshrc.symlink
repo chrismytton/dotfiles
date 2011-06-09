@@ -33,6 +33,12 @@ fi
 
 export PATH MANPATH
 
+# put secret stuff in here
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
 # linux
 if [[ $OSTYPE == 'linux-gnu' ]]; then
   alias o=gnome-open
