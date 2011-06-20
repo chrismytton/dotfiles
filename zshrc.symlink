@@ -1,8 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="hecticjeff"
-plugins=(git git-flow rails3 vagrant bundler)
-source $ZSH/oh-my-zsh.sh
+plugins=(git github git-flow rails3 vagrant bundler)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
@@ -31,7 +30,9 @@ if [[ -d "$HOME/.bin" ]]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-export PATH MANPATH
+export PATH CPATH LD_LIBRARY_PATH PKG_CONFIG_PATH MANPATH
+
+source $ZSH/oh-my-zsh.sh
 
 # put secret stuff in here
 if [[ -a ~/.localrc ]]
