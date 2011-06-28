@@ -6,3 +6,5 @@ html=.haml
 css=.sass,.scss
 --type-set
 cucumber=.feature
+--type-set
+coffee-script=.coffee
