@@ -1,3 +1,0 @@
-export rvm_path="/home/chris/.rvm"
-export rvm_bin_path="~/.rvm/bin"
-export rvm_man_path="~/.rvm/share/man"
