@@ -50,11 +50,5 @@ export EDITOR='vim'
 
 unsetopt auto_name_dirs
 
-# secureme example.com 8888
-secureme () {
-  echo "[$1:$2] Switching to secure ssh connection...remember to change proxy settings"
-  ssh -CND $2 $1
-}
-
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
