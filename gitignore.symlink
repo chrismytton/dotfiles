@@ -12,3 +12,4 @@ nbproject
 .sass-cache/
 npm-debug.log
 .cake_task_cache
+*.rbc
