@@ -1,17 +1,13 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="hecticjeff"
-plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
+plugins=(cake gem git github git-flow rails3 vagrant bundler brew rvm)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
 if [[ -d "/usr/local" ]]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-fi
-
-if [[ -d "$HOME/.rbenv/bin" ]]; then
-  PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
 MANPATH="/usr/share/man:/usr/local/share/man"
@@ -54,10 +50,5 @@ export EDITOR='vim'
 
 unsetopt auto_name_dirs
 
-# rbenv
-if command -v rbenv &>/dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
