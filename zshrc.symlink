@@ -1,7 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="hecticjeff"
-plugins=(cake gem git github git-flow rails3 vagrant bundler brew rvm)
+export ZSH_THEME=""
+plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
@@ -50,5 +50,7 @@ export EDITOR='vim'
 
 unsetopt auto_name_dirs
 
+unalias heroku
+
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
