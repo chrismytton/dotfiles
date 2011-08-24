@@ -31,4 +31,4 @@ if [ ! -f "$HOME/.vim/README.markdown" ]; then
 fi
 
 # upgrade
-OVERWRITE_OPTION='B' . "$DOTFILE_DIR/upgrade.sh"
+. "$DOTFILE_DIR/upgrade.sh"

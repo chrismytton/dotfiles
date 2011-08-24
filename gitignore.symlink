@@ -12,3 +12,5 @@ nbproject
 .sass-cache/
 npm-debug.log
 .powenv
+.cake_task_cache
+*.rbc

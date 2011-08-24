@@ -1,7 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="hecticjeff"
-plugins=(git github git-flow rails3 vagrant bundler)
+export ZSH_THEME=""
+plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
@@ -50,11 +50,7 @@ export EDITOR='vim'
 
 unsetopt auto_name_dirs
 
-# secureme example.com 8888
-secureme () {
-  echo "[$1:$2] Switching to secure ssh connection...remember to change proxy settings"
-  ssh -CND $2 $1
-}
+unalias heroku
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
