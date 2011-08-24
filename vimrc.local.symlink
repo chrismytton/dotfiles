@@ -1,3 +1,2 @@
 au BufRead,BufNewFile *.hbs set filetype=html
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
-colorscheme ir_black
