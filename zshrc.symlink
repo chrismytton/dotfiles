@@ -52,5 +52,9 @@ unsetopt auto_name_dirs
 
 unalias heroku
 
+if command -v npm &>/dev/null; then
+  . <(npm completion)
+fi
+
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
