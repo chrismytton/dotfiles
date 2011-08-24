@@ -11,3 +11,4 @@ nbproject
 .rvmrc
 .sass-cache/
 npm-debug.log
+.powenv
