@@ -21,6 +21,7 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
   git clone "https://github.com/hecticjeff/oh-my-zsh" ~/.oh-my-zsh
+  ln -s "$DOTFILE_DIR/zsh" "$HOME/.oh-my-zsh/custom/plugins"
 fi
 
 # janus
