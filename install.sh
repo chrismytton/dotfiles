@@ -21,8 +21,10 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "installing oh-my-zsh"
   git clone "https://github.com/robbyrussell/oh-my-zsh" ~/.oh-my-zsh
-  ln -s "$DOTFILE_DIR/zsh" "$HOME/.oh-my-zsh/custom/plugins"
 fi
+
+ln -nfs "$DOTFILE_DIR/zsh" "$HOME/.oh-my-zsh/custom/plugins"
+ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticjeff.zsh-theme"
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
