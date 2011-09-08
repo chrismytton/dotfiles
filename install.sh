@@ -30,7 +30,7 @@ ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticj
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
   echo "installing janus"
   for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
-  git clone "https://github.com/hecticjeff/janus" ~/.vim
+  git clone "https://github.com/carlhuda/janus" ~/.vim
 fi
 
 # upgrade
