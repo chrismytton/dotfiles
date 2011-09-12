@@ -19,14 +19,19 @@ You need to make sure you have the following tools before starting
 On os x curl and zsh are already there, so you just need git, I
 recommend [homebrew](https://github.com/mxcl/homebrew).
 
-For linux you will need to do this before starting:
+```bash
+brew install git
+```
+
+For linux you will need to get curl, git and zsh from your distro's
+package manager.
 
 ``` bash
 sudo apt-get install curl git zsh
 ```
 
 This will get you installed with the dotfiles you are looking at, and
-will also install oh-my-zsh and janus.
+will also install oh-my-zsh and janus:
 
 ``` bash
 curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh | sh
