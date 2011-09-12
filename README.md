@@ -29,7 +29,7 @@ This will get you installed with the dotfiles you are looking at, and
 will also install oh-my-zsh and janus.
 
 ``` bash
-curl https://github.com/hecticjeff/dotfiles/raw/master/install.sh | sh
+curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh | sh
 chsh -s /bin/zsh
 ```
 
@@ -41,7 +41,7 @@ this script does.
 
 ``` bash
 cd ~/.dotfiles
-sh upgrade.sh
+./install.sh
 ```
 
 ## gitconfig
@@ -50,7 +50,7 @@ To install a custom gitconfig which includes your github credentials:
 
 ``` bash
 cd ~/.dotfiles
-sh gitconfig.sh
+./gitconfig.sh
 ```
 
 Copyright (c) Chris Mytton
