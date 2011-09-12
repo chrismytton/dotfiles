@@ -40,8 +40,7 @@ this script does.
 ## Upgrading
 
 ``` bash
-cd ~/.dotfiles
-./install.sh
+~/.dotfiles/install.sh
 ```
 
 ## gitconfig
@@ -49,8 +48,7 @@ cd ~/.dotfiles
 To install a custom gitconfig which includes your github credentials:
 
 ``` bash
-cd ~/.dotfiles
-./gitconfig.sh
+~/.dotfiles/gitconfig.sh
 ```
 
 Copyright (c) Chris Mytton
