@@ -29,8 +29,7 @@ ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticj
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
   echo "installing janus"
-  for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
-  git clone "https://github.com/carlhuda/janus" ~/.vim
+  curl -sL https://raw.github.com/carlhuda/janus/master/bootstrap.sh | sh
 fi
 
 # upgrade
