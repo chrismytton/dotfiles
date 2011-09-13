@@ -5,7 +5,6 @@ DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
 
 # dotfiles
 if [ ! -d "$DOTFILE_DIR" ]; then
-  echo "installing dotfiles"
   git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILE_DIR"
 else
   cd "$DOTFILE_DIR"
@@ -19,7 +18,6 @@ if [ -L "$HOME/.oh-my-zsh" ]; then
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "installing oh-my-zsh"
   git clone "https://github.com/robbyrussell/oh-my-zsh" ~/.oh-my-zsh
 fi
 
@@ -28,7 +26,6 @@ ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticj
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
-  echo "installing janus"
   curl -sL https://raw.github.com/carlhuda/janus/master/bootstrap.sh | sh
 fi
 
@@ -42,8 +39,7 @@ fi
 
 # e.g `remote_install hub http://defunkt.io/hub/standalone`
 remote_install () {
-  echo "installing $1"
-  curl $2 -sL > "$INSTALL_PREFIX/$1"
+  curl $2 -fsSL > "$INSTALL_PREFIX/$1"
   chmod +x "$INSTALL_PREFIX/$1"
 }
 
@@ -54,8 +50,6 @@ DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
 
 # Run the script from the dotfiles directory
 cd $DOTFILE_DIR
-
-echo "upgrading dotfiles"
 
 # global flags for installing dotfiles
 skip_all=false
@@ -77,7 +71,7 @@ do
   target="$HOME/.`basename $linkable .symlink`"
 
   # check if the target already exists
-  if [ -f "$target" -o -L "$target" ]; then
+  if [ ! -L "$target" ]; then
 
     # check that we're not already on an *all* flag
     if ( ! $overwrite_all && ! $backup_all ); then
@@ -112,20 +106,19 @@ do
       echo "skipping $target"
       continue
     fi
-  fi
 
-  # move the file out of the way if the user wants to backup
-  if ( $backup || $backup_all ); then
-    echo "backing up $target"
-    mv "$target" "$target.backup"
-  elif ( $overwrite || $overwrite_all ); then
-    echo "removing $target"
-    rm -rf "$target"
+    # move the file out of the way if the user wants to backup
+    if ( $backup || $backup_all ); then
+      echo "backing up $target"
+      mv "$target" "$target.backup"
+    elif ( $overwrite || $overwrite_all ); then
+      echo "removing $target"
+      rm -rf "$target"
+    fi
   fi
 
   # finally link in the file
-  echo "linking $target"
-  ln -s "$file" "$target"
+  ln -nfs "$file" "$target"
 
 done
 
