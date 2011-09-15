@@ -8,7 +8,6 @@ tmp/**/*
 Vagrantfile
 .zfproject.xml
 nbproject
-.rvmrc
 .sass-cache/
 npm-debug.log
 .powenv
