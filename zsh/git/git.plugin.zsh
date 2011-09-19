@@ -1,5 +1,7 @@
-# hub
-function git(){hub "$@"}
+if [ "$commands[(I)hub]" ]; then
+  # hub
+  function git(){hub "$@"}
+fi
 
 # git
 alias g=git
