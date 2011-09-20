@@ -1,7 +1,7 @@
 # oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="hecticjeff"
-plugins=(cake gem git github git-flow rails3 vagrant brew)
+plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
