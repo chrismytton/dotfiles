@@ -33,7 +33,7 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
 [instaweb]
   httpd = webrick
 [push]
-  default = tracking
+  default = current
 GITCONFIG
 else
   echo "existing ~/.gitconfig found, use --force to override"
