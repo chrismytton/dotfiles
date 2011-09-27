@@ -13,3 +13,4 @@ npm-debug.log
 .powenv
 .cake_task_cache
 *.rbc
+.rbenv-version

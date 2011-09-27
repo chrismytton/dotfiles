@@ -56,5 +56,13 @@ if command -v npm &>/dev/null; then
   . <(npm completion)
 fi
 
+# rbenv
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  if command -v rbenv &>/dev/null; then
+    eval "$(rbenv init -)"
+  fi
+fi
+
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
