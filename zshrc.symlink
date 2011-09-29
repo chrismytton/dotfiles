@@ -52,6 +52,10 @@ unsetopt auto_name_dirs
 
 unalias heroku
 
+# Update and edit dotfiles
+alias zup='sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"'
+alias zedit='$EDITOR ~/.dotfiles'
+
 if command -v npm &>/dev/null; then
   . <(npm completion)
 fi
