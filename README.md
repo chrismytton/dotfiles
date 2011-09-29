@@ -26,15 +26,12 @@ brew install git
 For linux you will need to get curl, git and zsh from your distro's
 package manager.
 
-``` bash
-sudo apt-get install curl git zsh
-```
-
-This will get you installed with the dotfiles you are looking at, and
-will also install oh-my-zsh and janus:
+Run the following to get the dotfiles you are looking at, this
+will also install oh-my-zsh and janus, and set your default shell to
+be `zsh`.
 
 ``` bash
-curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh | sh
+sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"
 chsh -s /bin/zsh
 ```
 
@@ -53,7 +50,7 @@ this script does.
 To install a custom gitconfig which includes your github credentials:
 
 ``` bash
-~/.dotfiles/gitconfig.sh
+sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/gitconfig.sh)"
 ```
 
 Copyright (c) Chris Mytton
