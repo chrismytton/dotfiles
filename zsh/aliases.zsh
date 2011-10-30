@@ -4,9 +4,9 @@ alias l='ls -laF'
 
 # Update and edit dotfiles
 alias reload!='. ~/.zshrc'
-alias zup='sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"'
+alias zup='sh -c "$(curl -fsSL http://git.io/yS_hZw)"'
 alias zedit='$EDITOR ~/.dotfiles'
 
 # MIT-LICENCE
 # Usage `licence > MIT-LICENCE`
-alias licence='sh -c "$(curl -fsSL https://raw.github.com/gist/767068/770b334c0b74903344158650c165a0cb94ddbff5/license)"'
+alias license='sh -c "$(curl -fsSL http://git.io/license)"'
