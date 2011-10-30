@@ -33,12 +33,6 @@ then
   source ~/.localrc
 fi
 
-# linux
-if [[ $OSTYPE == 'linux-gnu' ]]; then
-  alias o=gnome-open
-  alias gx=gitg
-fi
-
 export EDITOR='vim'
 
 # Update and edit dotfiles
