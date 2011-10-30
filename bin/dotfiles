@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+
+package='dotfiles'
+version='0.0.1'
+
+command="$1"
+
+case "$command" in
+"" | "-h" | "--help" )
+  echo -e "$package $version\n$($package-help)" >&2
+  ;;
+* )
+  command_path="$(command -v "$package-$command" || true)"
+  if [ -z "$command_path" ]; then
+    echo "$package: no such command \`$command'" >&2
+    exit 1
+  fi
+
+  shift 1
+  exec "$command_path" "$@"
+  ;;
+esac

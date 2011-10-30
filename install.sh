@@ -6,10 +6,9 @@ DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 main() {
   # Run the script from the dotfiles directory
   check_gitconfig
-  check_dotfiles
+  clone_dotfiles
   check_janus
   install_dotfiles
-  upgrade_janus
 }
 
 check_gitconfig() {
@@ -19,7 +18,7 @@ check_gitconfig() {
   fi
 }
 
-check_dotfiles() {
+clone_dotfiles() {
   if [ ! -d "$DOTFILES" ]; then
     git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
   fi
@@ -113,15 +112,6 @@ install_dotfiles() {
     ln -nfs "$source" "$target"
 
   done
-}
-
-upgrade_janus() {
-  /bin/echo -n "Upgrade janus? (y/n): "
-  read upgrade_janus
-  if [ "$upgrade_janus" = "y" ]; then
-    cd ~/.vim
-    rake upgrade
-  fi
 }
 
 # Run the installer

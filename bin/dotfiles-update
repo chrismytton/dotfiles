@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd "$ZSH"
+git pull
+
+upgrade_janus() {
+  /bin/echo -n "Upgrade janus? (y/n): "
+  read upgrade_janus
+  if [ "$upgrade_janus" = "y" ]; then
+    cd ~/.vim
+    rake upgrade
+  fi
+}

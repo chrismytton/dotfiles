@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+cat <<HELP
+Usage: dotfiles COMMAND
+HELP
