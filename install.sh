@@ -9,7 +9,7 @@ cd "$DOTFILES"
 # gitconfig
 if [ ! -f "$HOME/.gitconfig" ]; then
   echo "No ~/.gitconfig detected, configuring"
-  sh -c "$(curl -fsSL https://raw.github.com/hecticjeff/dotfiles/master/gitconfig.sh)"
+  sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/bin/git-create-config)"
 fi
 
 # dotfiles
@@ -19,7 +19,7 @@ fi
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
-  sh -c "$(curl -fsSL https://raw.github.com/carlhuda/janus/master/bootstrap.sh)"
+  sh -c "$(curl -fsSL https://github.com/carlhuda/janus/raw/master/bootstrap.sh)"
 fi
 
 # global flags for installing dotfiles
