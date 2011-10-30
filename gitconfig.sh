@@ -3,13 +3,14 @@ set -e
 
 if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   echo "configuring ~/.gitconfig"
-  /bin/echo -n "your full name: "
+  /bin/echo -n "user.name (your full name): "
   read user_name
-  /bin/echo -n "your email: "
+  /bin/echo -n "user.email (your email): "
   read user_email
-  /bin/echo -n "your github username: "
+  /bin/echo -n "github.user (your github username): "
   read github_user
-  /bin/echo -n "your github token: "
+  echo "Get your API Token from https://github.com/account/admin"
+  /bin/echo -n "github.token (your github API Token): "
   read github_token
 
   cat > "$HOME/.gitconfig" <<GITCONFIG
