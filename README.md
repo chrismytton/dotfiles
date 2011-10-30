@@ -1,12 +1,9 @@
 dotfiles
 ========
 
-For use with linux or os x, has a strong preference towards zsh and vim.
-This is mostly just some custom settings for some excellent tools.
-
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) provides the
-  base for zsh.
-* [janus](https://github.com/carlhuda/janus) provides the vim framework.
+Simplistic dotfiles inspired by the directory structure in
+[@holman's](https://github.com/holman/dotfiles) dotfiles. These use a
+pure shell approach to installing the dotfiles.
 
 ## Installation
 
@@ -19,38 +16,31 @@ You need to make sure you have the following tools before starting
 On os x curl and zsh are already there, so you just need git, I
 recommend [homebrew](https://github.com/mxcl/homebrew).
 
-```bash
-brew install git
-```
+    brew install git
 
 For linux you will need to get curl, git and zsh from your distro's
 package manager.
 
 Run the following to get the dotfiles you are looking at, this
-will also install oh-my-zsh and janus, and set your default shell to
-be `zsh`.
+will also install and janus.
 
-``` bash
-sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"
-chsh -s /bin/zsh
-```
+    sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"
 
-If that all sounds a bit too
-scary for you then take a look at `install.sh` to get an idea for what
-this script does.
+Then change your shell to zsh.
+
+    chsh -s /bin/zsh
+
+If that all sounds a bit too scary for you then take a look at
+`install.sh` to get an idea for what this script does.
 
 ## Upgrading
 
-``` bash
-~/.dotfiles/install.sh
-```
+    dotfiles update
 
 ## gitconfig
 
 To install a custom gitconfig which includes your github credentials:
 
-``` bash
-sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/gitconfig.sh)"
-```
+    git create-config
 
 Copyright (c) Chris Mytton
