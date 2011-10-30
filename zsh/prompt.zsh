@@ -9,6 +9,3 @@ PROMPT='%~%(?..%{$fg[red]%})%#%{$reset_color%} '
 if [ "$SSH_CONNECTION" ]; then
   PROMPT="%n@%m:$PROMPT"
 fi
-
-# continuation prompt
-PS2='%{$fg_bold[grey]%}%B>%{$reset_colors%}%b '
