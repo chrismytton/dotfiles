@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$EDITOR" ]; then
+  editor="$EDITOR"
+elif [ "$(which mate)" ]; then
+  editor="mate"
+else
+  editor="vi"
+fi
+
+"$editor" "$ZSH"
