@@ -3,6 +3,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+export EDITOR='vim' # default editor
+
 export CLICOLOR=true # Make commands like ls use color.
 
 # See `man zshoptions` for a full explaination of these options.

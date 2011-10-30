@@ -15,9 +15,6 @@ MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH MANPATH
 
-# Editor
-export EDITOR='vim'
-
 # Load all the zsh files in the dotfiles.
 for module in $ZSH/**/*.zsh
 do
