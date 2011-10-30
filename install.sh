@@ -1,13 +1,16 @@
 #!/bin/sh
 set -e
 
-DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
+DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
+
+# Run the script from the dotfiles directory
+cd $DOTFILES
 
 # dotfiles
-if [ ! -d "$DOTFILE_DIR" ]; then
-  git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILE_DIR"
+if [ ! -d "$DOTFILES" ]; then
+  git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
 else
-  cd "$DOTFILE_DIR"
+  cd "$DOTFILES"
   git pull origin master
 fi
 
@@ -21,8 +24,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   git clone "https://github.com/robbyrussell/oh-my-zsh" ~/.oh-my-zsh
 fi
 
-ln -nfs "$DOTFILE_DIR/zsh" "$HOME/.oh-my-zsh/custom/plugins"
-ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticjeff.zsh-theme"
+ln -nfs "$DOTFILES/zsh" "$HOME/.oh-my-zsh/custom/plugins"
+ln -nfs "$DOTFILES/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticjeff.zsh-theme"
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
