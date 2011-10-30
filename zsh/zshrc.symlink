@@ -35,11 +35,6 @@ fi
 
 export EDITOR='vim'
 
-# Update and edit dotfiles
-alias reload!='. ~/.zshrc'
-alias zup='sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"'
-alias zedit='$EDITOR ~/.dotfiles'
-
 if command -v npm &>/dev/null; then
   . <(npm completion)
 fi
