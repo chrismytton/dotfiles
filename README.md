@@ -28,7 +28,7 @@ will also install and janus.
 
 Then change your shell to zsh.
 
-    chsh -s /bin/zsh
+    chsh -s $(which zsh)
 
 If that all sounds a bit too scary for you then take a look at
 `install.sh` to get an idea for what this script does.
