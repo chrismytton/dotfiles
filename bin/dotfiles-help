@@ -3,4 +3,12 @@ set -e
 
 cat <<HELP
 Usage: dotfiles COMMAND
+
+Where command is one of:
+
+* help (this)
+* install (link files into ~)
+* update (pull down the latest code)
+* edit (edit the dotfiles)
+* reload (reload the dotfiles)
 HELP
