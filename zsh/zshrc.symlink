@@ -1,7 +1,7 @@
-# oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="hecticjeff"
-plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
+# zsh
+export ZSH="$HOME/.dotfiles"
+
+# plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
 
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
@@ -18,7 +18,14 @@ fi
 
 export PATH MANPATH
 
-source $ZSH/oh-my-zsh.sh
+# Load all the zsh files in the dotfiles.
+for file in $ZSH/**/*.zsh
+do
+  source "$file"
+done
+
+# Completion
+autoload compinit && compinit
 
 # put secret stuff in here
 if [[ -a ~/.localrc ]]
@@ -34,11 +41,8 @@ fi
 
 export EDITOR='vim'
 
-unsetopt auto_name_dirs
-
-unalias heroku
-
 # Update and edit dotfiles
+alias reload!='. ~/.zshrc'
 alias zup='sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/install.sh)"'
 alias zedit='$EDITOR ~/.dotfiles'
 
