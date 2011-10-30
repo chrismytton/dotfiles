@@ -9,8 +9,8 @@ fi
 
 MANPATH="/usr/share/man:/usr/local/share/man"
 
-if [[ -d "$HOME/.bin" ]]; then
-  PATH="$HOME/.bin:$PATH"
+if [[ -d "$ZSH/bin" ]]; then
+  PATH="$ZSH/bin:$PATH"
 fi
 
 export PATH MANPATH
