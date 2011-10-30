@@ -33,11 +33,27 @@ Then change your shell to zsh.
 If that all sounds a bit too scary for you then take a look at
 `install.sh` to get an idea for what this script does.
 
-## Upgrading
+## Usage
+
+The `dotfiles(1)` command is used to manage dotfiles in your home
+directory.
+
+### update
 
     dotfiles update
 
-## gitconfig
+Updates the dotfiles repository to the latest version, re-installs the
+files, then offers to upgrade janus.
+
+### install
+
+    dotfiles install
+
+Used to relink all the symlinks in the dotfiles repository.
+
+## Extras
+
+### git-create-config
 
 To install a custom gitconfig which includes your github credentials:
 
