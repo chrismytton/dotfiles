@@ -12,25 +12,11 @@ fi
 
 MANPATH="/usr/share/man:/usr/local/share/man"
 
-# Scan folders in ~/local and add to path
-# Mostly stolen from http://blog.nodejs.org/2011/04/04/development-environment/
-if [[ -d "$HOME/local" ]]; then
-  PATH="$HOME/local/bin:$HOME/local/sbin:$PATH"
-  for i in $HOME/local/*; do
-    [ -d $i/bin ] && PATH="${i}/bin:${PATH}"
-    [ -d $i/sbin ] && PATH="${i}/sbin:${PATH}"
-    [ -d $i/include ] && CPATH="${i}/include:${CPATH}"
-    [ -d $i/lib ] && LD_LIBRARY_PATH="${i}/lib:${LD_LIBRARY_PATH}"
-    [ -d $i/lib/pkgconfig ] && PKG_CONFIG_PATH="${i}/lib/pkgconfig:${PKG_CONFIG_PATH}"
-    [ -d $i/share/man ] && MANPATH="${i}/share/man:${MANPATH}"
-  done
-fi
-
 if [[ -d "$HOME/.bin" ]]; then
   PATH="$HOME/.bin:$PATH"
 fi
 
-export PATH CPATH LD_LIBRARY_PATH PKG_CONFIG_PATH MANPATH
+export PATH MANPATH
 
 source $ZSH/oh-my-zsh.sh
 
