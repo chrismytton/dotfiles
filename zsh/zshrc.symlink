@@ -7,11 +7,11 @@ if [[ -d "/usr/local" ]]; then
   PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
-MANPATH="/usr/share/man:/usr/local/share/man"
-
 if [[ -d "$ZSH/bin" ]]; then
   PATH="$ZSH/bin:$PATH"
 fi
+
+MANPATH="/usr/share/man:/usr/local/share/man"
 
 export PATH MANPATH
 
