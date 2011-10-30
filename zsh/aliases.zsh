@@ -9,4 +9,4 @@ alias zedit='$EDITOR ~/.dotfiles'
 
 # MIT-LICENCE
 # Usage `license > MIT-LICENSE`
-alias license='sh -c "$(curl -fsSL http://git.io/license)"'
+alias license='curl -fsSL http://git.io/license | sh'
