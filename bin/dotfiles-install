@@ -3,7 +3,14 @@ set -e
 
 main() {
   DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
+  clone_dotfiles
   install_dotfiles
+}
+
+clone_dotfiles() {
+  if [ ! -d "$DOTFILES" ]; then
+    git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
+  fi
 }
 
 install_dotfiles() {
