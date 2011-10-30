@@ -1,5 +1,0 @@
-# Searches history if text has been typed on the cmd line already
-"\e[B": history-search-forward
-"\e[A": history-search-backward
-set mark-directories On
-set mark-symlinked-directories On
