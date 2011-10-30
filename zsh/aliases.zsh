@@ -8,5 +8,5 @@ alias zup='sh -c "$(curl -fsSL http://git.io/yS_hZw)"'
 alias zedit='$EDITOR ~/.dotfiles'
 
 # MIT-LICENCE
-# Usage `licence > MIT-LICENCE`
+# Usage `license > MIT-LICENSE`
 alias license='sh -c "$(curl -fsSL http://git.io/license)"'
