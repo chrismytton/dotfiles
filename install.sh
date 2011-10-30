@@ -4,63 +4,55 @@ set -e
 DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 
 # Run the script from the dotfiles directory
-cd $DOTFILES
+cd "$DOTFILES"
+
+# gitconfig
+if [ ! -f "$HOME/.gitconfig" ]; then
+  echo "No ~/.gitconfig detected, configuring"
+  sh -c "$(curl -fsSL https://raw.github.com/hecticjeff/dotfiles/master/gitconfig.sh)"
+fi
 
 # dotfiles
 if [ ! -d "$DOTFILES" ]; then
   git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
-else
-  cd "$DOTFILES"
-  git pull origin master
 fi
-
-# oh-my-zsh
-# if there is a symlink there, remove it
-if [ -L "$HOME/.oh-my-zsh" ]; then
-  rm ~/.oh-my-zsh
-fi
-
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  git clone "https://github.com/robbyrussell/oh-my-zsh" ~/.oh-my-zsh
-fi
-
-ln -nfs "$DOTFILES/zsh" "$HOME/.oh-my-zsh/custom/plugins"
-ln -nfs "$DOTFILES/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticjeff.zsh-theme"
 
 # janus
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
-  curl -sL https://raw.github.com/carlhuda/janus/master/bootstrap.sh | sh
+  sh -c "$(curl -fsSL https://raw.github.com/carlhuda/janus/master/bootstrap.sh)"
 fi
+
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false
 backup_all=false
 
 # loop over all the `.symlink` files
-for linkable in *.symlink
+for linkable in **/*.symlink
 do
   # reset these to false at the start of each loop
   overwrite=false
   backup=false
   skip=false
+  quit=false
 
   # file that we are symlinking to
-  file="`pwd`/$linkable"
+  source="$DOTFILES/$linkable"
 
   # the target for the symlink
   target="$HOME/.`basename $linkable .symlink`"
 
-  # check if the target already exists
-  if [ ! -L "$target" ]; then
+  # check if the target is an existing file that's not a symlink.
+  if [ -f "$target" -a ! -L "$target" ]; then
 
-    # check that we're not already on an *all* flag
+    # check that we're not already on an *_all flag
     if ( ! $overwrite_all && ! $backup_all ); then
 
       if [ "$OVERWRITE_OPTION" ]; then
         confirm=$OVERWRITE_OPTION
       else
         # ask the user how they want to proceed
-        /bin/echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all: "
+        /bin/echo -n "file exists $target [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all, [q]uit: "
         read confirm
       fi
 
@@ -72,7 +64,14 @@ do
         O) overwrite_all=true ;;
         B) backup_all=true ;;
         S) skip_all=true ;;
+        q) quit=true
       esac
+    fi
+
+    # exit with a failure if the user wants to quit.
+    if ( $quit ); then
+      echo "quitting..."
+      exit 1
     fi
 
     # break out of the loop if we're skipping all
@@ -92,13 +91,14 @@ do
       echo "backing up $target"
       mv "$target" "$target.backup"
     elif ( $overwrite || $overwrite_all ); then
-      echo "removing $target"
+      echo "overwriting $target"
       rm -rf "$target"
     fi
   fi
 
   # finally link in the file
-  ln -nfs "$file" "$target"
+  echo "Linking ${target} -> ${source}"
+  ln -nfs "$source" "$target"
 
 done
 
