@@ -1,7 +1,11 @@
 #!/bin/sh
 
-cd "$ZSH"
-git pull
+main() {
+  cd "$ZSH"
+  git pull
+  dotfiles install
+  upgrade_janus
+}
 
 upgrade_janus() {
   /bin/echo -n "Upgrade janus? (y/n): "
@@ -11,3 +15,5 @@ upgrade_janus() {
     rake upgrade
   fi
 }
+
+main
