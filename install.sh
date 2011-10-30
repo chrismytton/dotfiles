@@ -6,27 +6,24 @@ DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 main() {
   # Run the script from the dotfiles directory
   check_gitconfig
-  clone_dotfiles
   check_janus
-  exec $DOTFILES/bin/dotfiles install
+  execute_remote_script https://github.com/hecticjeff/dotfiles/raw/master/bin/dotfiles-install
+}
+
+execute_remote_script() {
+  sh -c "$(curl -fsSL $1)"
 }
 
 check_gitconfig() {
   if [ ! -f "$HOME/.gitconfig" ]; then
     echo "No ~/.gitconfig detected, configuring"
-    sh -c "$(curl -fsSL https://github.com/hecticjeff/dotfiles/raw/master/bin/git-create-config)"
-  fi
-}
-
-clone_dotfiles() {
-  if [ ! -d "$DOTFILES" ]; then
-    git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
+    execute_remote_script https://github.com/hecticjeff/dotfiles/raw/master/bin/git-create-config
   fi
 }
 
 check_janus() {
   if [ ! -f "$HOME/.vim/README.markdown" ]; then
-    sh -c "$(curl -fsSL https://github.com/carlhuda/janus/raw/master/bootstrap.sh)"
+    execute_remote_script https://github.com/carlhuda/janus/raw/master/bootstrap.sh
   fi
 }
 
