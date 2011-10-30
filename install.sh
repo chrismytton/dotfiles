@@ -28,29 +28,6 @@ ln -nfs "$DOTFILE_DIR/zsh/hecticjeff.zsh-theme" "$HOME/.oh-my-zsh/themes/hecticj
 if [ ! -f "$HOME/.vim/README.markdown" ]; then
   curl -sL https://raw.github.com/carlhuda/janus/master/bootstrap.sh | sh
 fi
-
-# upgrade
-
-# bin
-INSTALL_PREFIX="$HOME/local/shared/bin"
-if [ ! -d $INSTALL_PREFIX ]; then
-  mkdir -p $INSTALL_PREFIX
-fi
-
-# e.g `remote_install hub http://defunkt.io/hub/standalone`
-remote_install () {
-  curl $2 -fsSL > "$INSTALL_PREFIX/$1"
-  chmod +x "$INSTALL_PREFIX/$1"
-}
-
-# licence
-remote_install licence https://gist.github.com/raw/767068/ff15d3d44e54cbd0ad5ac72dc832e4c7193f5193/license
-
-DOTFILE_DIR=${DOTFILE_DIR:-"$HOME/.dotfiles"}
-
-# Run the script from the dotfiles directory
-cd $DOTFILE_DIR
-
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false
