@@ -1,8 +1,6 @@
 # zsh
 export ZSH="$HOME/.dotfiles"
 
-# plugins=(cake gem git github git-flow rails3 vagrant bundler brew)
-
 # paths
 PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
@@ -18,10 +16,13 @@ fi
 
 export PATH MANPATH
 
+# Editor
+export EDITOR='vim'
+
 # Load all the zsh files in the dotfiles.
-for file in $ZSH/**/*.zsh
+for module in $ZSH/**/*.zsh
 do
-  source "$file"
+  source "$module"
 done
 
 # Completion
@@ -32,8 +33,6 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-
-export EDITOR='vim'
 
 if command -v npm &>/dev/null; then
   . <(npm completion)
