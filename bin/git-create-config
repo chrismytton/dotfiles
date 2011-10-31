@@ -30,6 +30,19 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   showbranch = auto
   status = auto
   ui = auto
+[alias]
+  st = status -sb
+  p = push
+  po = push origin master
+  d = diff
+  dc = diff --cached
+  a = add
+  c = commit -v
+  ca = commit -va
+  co = checkout
+  b = branch
+  ba = branch -a
+  x = !gitx
 [core]
   excludesfile = $HOME/.gitignore
 [instaweb]
