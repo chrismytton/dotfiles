@@ -8,6 +8,8 @@ alias -- -='cd -'
 alias ll='ls -lF'
 alias l='ls -laF'
 
+alias _='sudo'
+
 # Update and edit dotfiles
 alias reload!='. ~/.zshrc'
 
