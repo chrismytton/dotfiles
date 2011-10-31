@@ -6,6 +6,9 @@ set -e
 #/ Symlinks the dotfiles into <path> or into $HOME is none is given. If the
 #/ dotfiles are not installed (because the script is running remotely) then
 #/ the script will first clone the dotfiles into <path>.
+#/
+#/ If you decide to install your files at a different 'path' then you will
+#/ also need to change the 'ZSH' variable at the top of `~/.zshrc'.
 
 main() {
   DOTFILES=${1:-"$HOME/.dotfiles"}
