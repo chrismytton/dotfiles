@@ -1,4 +1,4 @@
-if [ -n "$(command -v hub)" ]; then
+if command -v hub &>/dev/null; then
   # hub
   function git(){hub "$@"}
 fi
