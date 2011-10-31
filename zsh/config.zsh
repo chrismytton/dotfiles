@@ -7,6 +7,10 @@ export EDITOR='vim' # default editor
 
 export CLICOLOR=true # Make commands like ls use color.
 
+# Autocomplete with highlighting.
+# See https://wiki.archlinux.org/index.php/Zsh#Command_Completion
+zstyle ':completion:*' menu select
+
 # See `man zshoptions` for a full explaination of these options.
 setopt AUTO_PUSHD # Make cd act like pushd.
 setopt CORRECT # Spell checking for commands.
