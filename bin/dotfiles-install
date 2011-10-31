@@ -1,6 +1,12 @@
 #!/bin/sh
 set -e
 
+#/ Usage: dotfiles install [<path>]
+#/
+#/ Symlinks the dotfiles into <path> or into $HOME is none is given. If the
+#/ dotfiles are not installed (because the script is running remotely) then
+#/ the script will first clone the dotfiles into <path>.
+
 main() {
   DOTFILES=${1:-"$HOME/.dotfiles"}
   echo "Installing to $DOTFILES"
