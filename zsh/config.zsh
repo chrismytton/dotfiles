@@ -3,6 +3,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Load function in this path. Used for brew completion.
+fpath=("$ZSH/zsh/functions" $fpath)
+
 export EDITOR='vim' # default editor
 
 export CLICOLOR=true # Make commands like ls use color.
