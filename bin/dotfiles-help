@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+# The dotfiles help command. This attempts to extract help from the command
+# by looking for comment lines that begin with '#/'. If the help can't be
+# found then it will tell the user where the source is located.
 case "$1" in
 "") echo "Usage: dotfiles COMMAND
 
