@@ -22,7 +22,7 @@ For linux you will need to get curl, git and zsh from your distro's
 package manager.
 
 Run the following to get the dotfiles you are looking at, this
-will also install and janus.
+will also install a gitconfig if it's missing and janus.
 
     sh <(curl -fsSL http://git.io/yS_hZw)
 
