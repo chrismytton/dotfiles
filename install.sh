@@ -7,11 +7,11 @@ main() {
   # Run the script from the dotfiles directory
   check_gitconfig
   check_janus
-  execute_remote_script https://github.com/hecticjeff/dotfiles/raw/master/bin/dotfiles-install
+  execute_remote_script https://github.com/hecticjeff/dotfiles/raw/master/bin/dotfiles-install "$DOTFILES"
 }
 
 execute_remote_script() {
-  sh -c "$(curl -fsSL $1)"
+  sh -c "$(curl -fsSL $1)" - "$@"
 }
 
 check_gitconfig() {
