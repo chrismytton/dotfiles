@@ -1,14 +1,22 @@
 #!/bin/sh
 set -e
 
-cat <<HELP
-Usage: dotfiles COMMAND
+case "$1" in
+"") echo "Usage: dotfiles COMMAND
 
-Where command is one of:
+Some useful dotfiles commands are:
+    install     symlink the dotfiles into ~
+    update      pull down the latest dotfiles
+    edit        edit the dotfiles
+    reload      reload the dotfiles
 
-* help (this)
-* install (link files into ~)
-* update (pull down the latest code)
-* edit (edit the dotfiles)
-* reload (reload the dotfiles)
-HELP
+See 'dotfiles help <command>' for more information on specific commands.
+For full documentation see https://github.com/hecticjeff/dotfiles#readme"
+;;
+"install") echo "Usage: dotfiles install [<path>]
+
+Symlinks the dotfiles into <path> or into $HOME is none is given. If the
+dotfiles are not installed (because the script is running remotely) then
+the script will first clone the dotfiles into <path>."
+;;
+esac
