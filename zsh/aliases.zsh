@@ -8,6 +8,11 @@ alias -- -='cd -'
 alias ll='ls -lF'
 alias l='ls -laF'
 
+# mkdir
+take() {
+  mkdir "$1" && cd "$1"
+}
+
 alias _='sudo'
 
 # Update and edit dotfiles
