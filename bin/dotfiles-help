@@ -1,42 +1,49 @@
 #!/bin/sh
 set -e
+#/ Usage: dotfiles COMMAND
+#/
+#/ Some useful dotfiles commands are:
+#/     install     symlink the dotfiles into ~
+#/     update      pull down the latest dotfiles
+#/     edit        edit the dotfiles
+#/     reload      reload the dotfiles
+
+#/ See 'dotfiles help <command>' for more information on specific commands.
+#/ For full documentation see https://github.com/hecticjeff/dotfiles#readme
 
 # The dotfiles help command. This attempts to extract help from the command
 # by looking for comment lines that begin with '#/'. If the help can't be
 # found then it will tell the user where the source is located.
-case "$1" in
-"") echo "Usage: dotfiles COMMAND
+#
+# Inspiration for this help system comes from
+# [rbenv](https://github.com/sstephenson/rbenv) and
+# [shocco](http://rtomayko.github.com/shocco/).
 
-Some useful dotfiles commands are:
-    install     symlink the dotfiles into ~
-    update      pull down the latest dotfiles
-    edit        edit the dotfiles
-    reload      reload the dotfiles
+if [ -n "$1" ]; then
+  command_name="$1"
+else
+  command_name='help'
+fi
 
-See 'dotfiles help <command>' for more information on specific commands.
-For full documentation see https://github.com/hecticjeff/dotfiles#readme"
-;;
-*)
-  command_path="$(command -v "dotfiles-$1" || true)"
-  if [ -n "$command_path" ]; then
+command_path="$(command -v "dotfiles-$command_name" || true)"
+if [ -n "$command_path" ]; then
 
-    # Extract the help text from the command.
-    help="$(grep '^#/' <"$command_path" | cut -c4-)"
+  # Extract the help text from the command.
+  help="$(grep '^#/' <"$command_path" | cut -c4-)"
 
-    # If help has been found, display it, otherwise we tell the user where
-    # the command source code is located.
-    if [ -n "$help" ]; then
-      echo "$help"
-    else
-      echo "Sorry, the \`$1' command isn't documented yet."
-      echo
-      echo "You can view the command's source here:"
-      echo "$command_path"
-    fi
-
-    # Newline at the end of output.
-    echo
+  # If help has been found, display it, otherwise we tell the user where
+  # the command source code is located.
+  if [ -n "$help" ]; then
+    echo "$help"
   else
-    echo "dotfiles: no such command \`$1'"
+    echo "Sorry, the \`$command_name' command isn't documented yet."
+    echo
+    echo "You can view the command's source here:"
+    echo "$command_path"
   fi
-esac
+
+  # Newline at the end of output.
+  echo
+else
+  echo "dotfiles: no such command \`$command_name'"
+fi
