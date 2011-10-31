@@ -24,7 +24,7 @@ package manager.
 Run the following to get the dotfiles you are looking at, this
 will also install and janus.
 
-    sh -c "$(curl -fsSL http://git.io/yS_hZw)"
+    sh <(curl -fsSL http://git.io/yS_hZw)
 
 Then change your shell to zsh.
 
