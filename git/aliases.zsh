@@ -1,4 +1,4 @@
-if [ "$commands[(I)hub]" ]; then
+if [ -n "$(command -v hub)" ]; then
   # hub
   function git(){hub "$@"}
 fi
