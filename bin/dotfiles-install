@@ -2,7 +2,8 @@
 set -e
 
 main() {
-  DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
+  DOTFILES=${1:-"$HOME/.dotfiles"}
+  echo "Installing to $DOTFILES"
   clone_dotfiles
   install_dotfiles
 }
