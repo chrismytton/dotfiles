@@ -30,6 +30,3 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true
