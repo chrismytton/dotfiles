@@ -1,3 +1,9 @@
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'
+
 # ls
 alias ll='ls -lF'
 alias l='ls -laF'
