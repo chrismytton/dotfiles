@@ -55,5 +55,5 @@ if [ -n "$command_path" ]; then
   fi
 
 else
-  echo "dotfiles: no such command \`$command_name'"
+  echo "dotfiles: no such command \`$command_name'" >&2
 fi

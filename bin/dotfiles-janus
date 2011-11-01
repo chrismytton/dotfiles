@@ -21,7 +21,7 @@ update)
       sh -c "$(curl -fsSL https://github.com/carlhuda/janus/raw/master/bootstrap.sh)"
     fi
   else
-    echo "janus installed, try with --update"
+    echo "janus installed, try with --update" >&2
   fi
 ;;
 esac

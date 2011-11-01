@@ -13,8 +13,8 @@ set -e
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
 if [ ! -d "$DOTFILES" ]; then
-  echo "Cloning dotfiles into $DOTFILES"
-  git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
+  echo "Cloning dotfiles into $DOTFILES" >&2
+  git clone -q "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
 fi
 
 cd "$DOTFILES"
@@ -67,38 +67,38 @@ do
 
     # exit with a failure if the user wants to quit.
     if ( $quit ); then
-      echo "quitting..."
+      echo "quitting..." >&2
       exit 1
     fi
 
     # break out of the loop if we're skipping all
     if ( $skip_all ); then
-      echo "skipping all"
+      echo "skipping all" >&2
       break
     fi
 
     # continue to the next file if we're skipping this one
     if ( $skip ); then
-      echo "skipping $target"
+      echo "skipping $target" >&2
       continue
     fi
 
     # move the file out of the way if the user wants to backup
     if ( $backup || $backup_all ); then
-      echo "backing up $target"
+      echo "backing up $target" >&2
       mv "$target" "$target.backup"
     elif ( $overwrite || $overwrite_all ); then
-      echo "overwriting $target"
+      echo "overwriting $target" >&2
       rm -rf "$target"
     fi
   fi
 
   # finally link in the file
-  echo "${target} -> ${source}"
+  echo "${target} -> ${source}" >&2
   ln -nfs "$source" "$target"
 
 done
 
 if [ ! -f "$HOME/.gitconfig" ]; then
-  echo "No ~/.gitconfig detected, run 'git create-config' to create one."
+  echo "No ~/.gitconfig detected, run 'git create-config' to create one." >&2
 fi

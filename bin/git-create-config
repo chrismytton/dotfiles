@@ -51,5 +51,5 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   default = current
 GITCONFIG
 else
-  echo "existing ~/.gitconfig found, use --force to override"
+  echo "existing ~/.gitconfig found, use --force to override" >&2
 fi
