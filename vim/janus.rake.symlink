@@ -9,8 +9,8 @@ vim_plugin_task "clojure", "git://github.com/vim-scripts/VimClojure.git"
 vim_plugin_task "less", "git://github.com/groenewege/vim-less.git"
 
 vim_plugin_task "php" do
-  php_vim = "https://raw.github.com/gist/897883/23b0937d749e18ce4a2ebc7bc54080f6e9df41ff"
-  system "mkdir -p after/ftplugin && curl -L #{php_vim} > after/ftplugin/php.vim"
+  php_vim = "https://gist.github.com/raw/1330736/23b0937d749e18ce4a2ebc7bc54080f6e9df41ff/php.vim"
+  system "mkdir -p after/ftplugin && curl -fsSL #{php_vim} > after/ftplugin/php.vim"
 end
 
 skip_vim_plugin "syntastic" if /linux/ =~ RUBY_PLATFORM
