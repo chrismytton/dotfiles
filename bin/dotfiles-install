@@ -102,7 +102,7 @@ install_dotfiles() {
     fi
 
     # finally link in the file
-    echo "Linking ${target} -> ${source}"
+    echo "${target} -> ${source}"
     ln -nfs "$source" "$target"
 
   done
