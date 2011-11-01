@@ -1,24 +1,3 @@
-export ZSH="$HOME/.dotfiles"
-
-# Reset the path to include the sane defaults where system binaries live.
-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-
-# Add `/usr/local`'s bins to the path if it exists.
-if [[ -d "/usr/local" ]]; then
-  PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-fi
-
-# If there is a bin directory in $ZSH then add that to the path.
-if [[ -d "$ZSH/bin" ]]; then
-  PATH="$ZSH/bin:$PATH"
-fi
-
-# Set the default manpath.
-MANPATH="/usr/share/man:/usr/local/share/man"
-
-# Export the paths into the shell.
-export PATH MANPATH
-
 # Load all the zsh files in the dotfiles.
 for module ($ZSH/**/*.zsh) source "$module"
 
