@@ -110,8 +110,7 @@ install_dotfiles() {
 
 check_gitconfig() {
   if [ ! -f "$HOME/.gitconfig" ]; then
-    echo "No ~/.gitconfig detected, run 'git create-config' to generate
-    one."
+    echo "No ~/.gitconfig detected, run 'git create-config' to create one."
   fi
 }
 
