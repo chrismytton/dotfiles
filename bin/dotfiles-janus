@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+#/ Usage: dotfiles janus [--update]
+#/
+#/ Installs the janus framework to `~/.vim`.
+
+case $1 in
+update)
+  /bin/echo -n "Upgrade janus? (y/n): "
+  read upgrade_janus
+  if [ "$upgrade_janus" = "y" ]; then
+    cd ~/.vim
+    rake upgrade
+  fi
+;;
+*)
+  if [ ! -f "$HOME/.vim/README.markdown" ]; then
+    /bin/echo -n "janus not detected, install now? (y/n): "
+    read install_janus
+    if [ "$install_janus" = "y" ]; then
+      sh -c "$(curl -fsSL https://github.com/carlhuda/janus/raw/master/bootstrap.sh)"
+    fi
+  else
+    echo "janus installed, try with --update"
+  fi
+;;
+esac

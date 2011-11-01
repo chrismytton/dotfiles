@@ -1,19 +1,6 @@
 #!/bin/sh
 
-main() {
-  cd "$ZSH"
-  git pull
-  dotfiles install
-  upgrade_janus
-}
-
-upgrade_janus() {
-  /bin/echo -n "Upgrade janus? (y/n): "
-  read upgrade_janus
-  if [ "$upgrade_janus" = "y" ]; then
-    cd ~/.vim
-    rake upgrade
-  fi
-}
-
-main
+cd "$ZSH"
+git pull
+dotfiles install
+dotfiles janus update
