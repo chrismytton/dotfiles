@@ -24,7 +24,7 @@ package manager.
 Run the following to get the dotfiles you are looking at, this
 will also install a gitconfig if it's missing and janus.
 
-    sh <(curl -fsSL http://git.io/yS_hZw)
+    sh <(curl -fsSL git.io/~hecticjeff)
 
 Then change your shell to zsh.
 
