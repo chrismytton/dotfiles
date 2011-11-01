@@ -14,6 +14,7 @@ main() {
   DOTFILES=${1:-"$HOME/.dotfiles"}
   clone_dotfiles
   install_dotfiles
+  check_gitconfig
 }
 
 clone_dotfiles() {
@@ -106,5 +107,13 @@ install_dotfiles() {
 
   done
 }
+
+check_gitconfig() {
+  if [ ! -f "$HOME/.gitconfig" ]; then
+    echo "No ~/.gitconfig detected, run 'git create-config' to generate
+    one."
+  fi
+}
+
 
 main
