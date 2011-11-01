@@ -12,13 +12,13 @@ set -e
 
 main() {
   DOTFILES=${1:-"$HOME/.dotfiles"}
-  echo "Installing to $DOTFILES"
   clone_dotfiles
   install_dotfiles
 }
 
 clone_dotfiles() {
   if [ ! -d "$DOTFILES" ]; then
+    echo "Cloning dotfiles into $DOTFILES"
     git clone "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
   fi
 }
