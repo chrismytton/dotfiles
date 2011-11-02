@@ -1,9 +1,9 @@
 dotfiles
 ========
 
-Simplistic dotfiles inspired by the directory structure in
-[@holman's](https://github.com/holman/dotfiles) dotfiles. These use a
-pure shell approach to installing the dotfiles.
+My awesome dotfiles, they steal the directory structure from
+[@holman's](https://github.com/holman/dotfiles) dotfiles, and take a
+shell scripting approach to installing and managing them.
 
 ## Installation
 
