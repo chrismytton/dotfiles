@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-#/ Usage: dotfiles ln [<options>]
+#/ Usage: dotfiles ln [<options>] [<path>]
 #/
 #/ Options
 #/   --skip-all
@@ -16,8 +16,6 @@ if [ "$1" = "--complete" ]; then
   exit
 fi
 
-DOTFILES=${1:-"$HOME/.dotfiles"}
-
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false
@@ -27,14 +25,19 @@ backup_all=false
 case "$1" in
   "--skip-all")
     skip_all=true
+    shift
     ;;
   "--overwrite-all")
     overwrite_all=true
+    shift
     ;;
   "--backup-all")
     backup_all=true
+    shift
     ;;
 esac
+
+DOTFILES=${1:-"$HOME/.dotfiles"}
 
 # loop over all the `.symlink` files
 for linkable in **/*.symlink
