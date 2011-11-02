@@ -7,6 +7,14 @@ shell scripting approach to installing and managing them.
 
 ## Installation
 
+### The One Liner
+
+Paste this into the nearest terminal.
+
+    sh <(curl -fsSL git.io/~hecticjeff)
+
+### The details
+
 You need to make sure you have the following tools before starting
 
 * curl
