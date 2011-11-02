@@ -1,7 +1,18 @@
 #!/bin/sh
 set -e
 
+# Change into the dotfiles directory.
 cd "$DOTFILES"
-git pull
-dotfiles ln
-dotfiles janus update
+
+# If the user has made changes to the dotfiles and not committed, we ask them
+# to commit or stash those changes and then exit.
+if ! git diff-index --quiet HEAD; then
+  echo "Commit or stash changes in $DOTFILES before updating" >&2
+  exit 1
+fi
+
+# Update the dotfiles from git, then `ln` them into place and offer to
+# update janus.
+git pull origin master
+"$DOTFILES"/bin/dotfiles-ln
+"$DOTFILES"/bin/dotfiles-janus update
