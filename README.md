@@ -51,6 +51,20 @@ Finally you need to change your shell to zsh.
 If that all sounds a bit too scary for you then take a look at
 `bin/dotfiles-install` to get an idea for what this script does.
 
+## How does it work?
+
+Each top level directory (except for `bin/`) is named after the
+command that it augments with functionality.
+
+There are two types of files that go in these directories, `.symlink`
+and `.zsh` files.
+
+* `.symlink` - Generally used for "rc" files (like .zshrc).
+* `.zsh` - adds functionality to zsh.
+
+When installing all of the `.symlink` files get linked into the
+`$HOME` directory, all of the `.zsh` files get sourced by `~/.zshrc`.
+
 ## Usage
 
 The dotfiles are managed by the `dotfiles(1)` command. For more
