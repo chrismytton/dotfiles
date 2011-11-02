@@ -40,7 +40,7 @@ esac
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
 # loop over all the `.symlink` files
-for linkable in **/*.symlink
+for linkable in $DOTFILES/**/*.symlink
 do
   # reset these to false at the start of each loop
   overwrite=false
