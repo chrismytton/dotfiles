@@ -13,7 +13,7 @@ Paste this into the nearest terminal.
 
 ## Install
 
-You need to make sure you have the following tools before starting
+There are some dependencies you'll need before starting.
 
 * curl
 * git
@@ -27,12 +27,24 @@ recommend [homebrew](https://github.com/mxcl/homebrew).
 For linux you will need to get curl, git and zsh from your distro's
 package manager.
 
+### Automated install
+
 Run the following to get the dotfiles you are looking at, this
 will also install a gitconfig if it's missing and janus.
 
     sh <(curl -fsSL git.io/~hecticjeff)
 
-Then change your shell to zsh.
+### From source
+
+To install the dotfiles from source run the following.
+
+    git clone https://github.com/hecticjeff/dotfiles ~/.dotfiles
+    cd ~/.dotfiles
+    bin/dotfiles-install
+
+### Post install
+
+Finally you need to change your shell to zsh.
 
     chsh -s $(which zsh)
 
