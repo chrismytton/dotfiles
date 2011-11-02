@@ -21,6 +21,21 @@ fi
 cd "$DOTFILES"
 bin/dotfiles-ln "$DOTFILES"
 
+# Check if the user is already using zsh, if not then prompt them to
+# make the switch.
+if ! echo "$SHELL" | grep -q zsh; then
+  echo "
+These dotfiles are fairly useless without zsh.
+
+To make The Switch to zsh run the following:
+
+    chsh -s $(which zsh)
+
+Then logout and back in.
+" >&2
+
+fi
+
 # Tell the user how to get an easy `~/gitconfig`.
 if [ ! -f "$HOME/.gitconfig" ]; then
   echo "No ~/.gitconfig detected, run 'git create-config' to create one." >&2
