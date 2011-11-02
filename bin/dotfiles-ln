@@ -1,12 +1,32 @@
 #!/bin/sh
 set -e
 
+#/ Usage: dotfiles ln [<options>]
+#/
+#/ Options
+#/   --skip-all
+#/   --overwrite-all
+#/   --backup-all
+
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false
 backup_all=false
+
+# Check if the user has given an override flag.
+case "$1" in
+  "--skip-all")
+    skip_all=true
+    ;;
+  "--overwrite-all")
+    overwrite_all=true
+    ;;
+  "--backup-all")
+    backup_all=true
+    ;;
+esac
 
 # loop over all the `.symlink` files
 for linkable in **/*.symlink
