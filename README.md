@@ -41,28 +41,7 @@ If that all sounds a bit too scary for you then take a look at
 
 ## Usage
 
-The `dotfiles(1)` command is used to manage dotfiles in your home
-directory.
-
-### update
-
-    dotfiles update
-
-Updates the dotfiles repository to the latest version, re-installs the
-files, then offers to upgrade janus.
-
-### install
-
-    dotfiles install
-
-Used to relink all the symlinks in the dotfiles repository.
-
-## Extras
-
-### git-create-config
-
-To install a custom gitconfig which includes your github credentials:
-
-    git create-config
+The dotfiles are managed by the `dotfiles(1)` command. For more
+information see `dotfiles help [<command>]`.
 
 Copyright (c) Chris Mytton
