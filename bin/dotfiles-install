@@ -17,13 +17,13 @@ DOTFILES=${1:-"$HOME/.dotfiles"}
 if [ ! -d "$DOTFILES" ]; then
   echo "Cloning dotfiles into $DOTFILES" >&2
   git clone -q "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
-else
-  cd "$DOTFILES"
-  git pull
-fi
 
-# Symlink all the dotfiles.
-$DOTFILES/bin/dotfiles-ln --verbose "$DOTFILES"
+  # Symlink all the dotfiles.
+  $DOTFILES/bin/dotfiles-ln --verbose "$DOTFILES"
+else
+  # Update all the dotfiles.
+  "$DOTFILES"/bin/dotfiles-update
+fi
 
 # Check if the user is already using zsh, if not then prompt them to
 # make the switch.
