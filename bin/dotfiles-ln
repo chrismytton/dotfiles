@@ -8,6 +8,14 @@ set -e
 #/   --overwrite-all
 #/   --backup-all
 
+# Provide dotfiles completions
+if [ "$1" = "--complete" ]; then
+  echo --skip-all
+  echo --overwrite-all
+  echo --backup-all
+  exit
+fi
+
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
 # global flags for installing dotfiles
