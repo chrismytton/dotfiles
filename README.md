@@ -1,9 +1,9 @@
 dotfiles
 ========
 
-My awesome dotfiles, they steal the directory structure from
-[@holman's](https://github.com/holman/dotfiles) dotfiles, and take a
-shell scripting approach to installing and managing them.
+My awesome dotfiles, directory structure is stolen from [@holman's
+dotfiles](https://github.com/holman/dotfiles). Installing and management
+is all done in shell.
 
 ## The One Liner
 
