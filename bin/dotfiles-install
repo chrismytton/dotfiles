@@ -23,7 +23,7 @@ else
 fi
 
 # Symlink all the dotfiles.
-$DOTFILES/bin/dotfiles-ln "$DOTFILES"
+$DOTFILES/bin/dotfiles-ln --verbose "$DOTFILES"
 
 # Check if the user is already using zsh, if not then prompt them to
 # make the switch.
