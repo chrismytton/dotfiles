@@ -45,7 +45,7 @@ do
         O) overwrite_all=true ;;
         B) backup_all=true ;;
         S) skip_all=true ;;
-        q) quit=true
+        *) quit=true
       esac
     fi
 
