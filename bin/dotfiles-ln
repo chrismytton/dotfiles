@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+DOTFILES=${1:-"$HOME/.dotfiles"}
+
 # global flags for installing dotfiles
 skip_all=false
 overwrite_all=false

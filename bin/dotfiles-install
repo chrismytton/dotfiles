@@ -19,7 +19,7 @@ fi
 
 # Symlink all the dotfiles.
 cd "$DOTFILES"
-bin/dotfiles-ln
+bin/dotfiles-ln "$DOTFILES"
 
 # Tell the user how to get an easy `~/gitconfig`.
 if [ ! -f "$HOME/.gitconfig" ]; then
