@@ -23,6 +23,12 @@ set -e
 #/ See 'dotfiles help <command>' for more information on specific commands.
 #/ For full documentation see https://github.com/hecticjeff/dotfiles#readme.
 
+# Provide dotfiles completions
+if [ "$1" = "--complete" ]; then
+  dotfiles-commands
+  exit
+fi
+
 # If an argument has been given then that command's help is shown. Otherwise
 # we default to displaying this command's help.
 if [ -n "$1" ]; then
