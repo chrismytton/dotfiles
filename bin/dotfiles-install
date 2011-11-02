@@ -19,7 +19,7 @@ if [ ! -d "$DOTFILES" ]; then
   git clone -q "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
 
   # Symlink all the dotfiles.
-  $DOTFILES/bin/dotfiles-ln --verbose "$DOTFILES"
+  "$DOTFILES"/bin/dotfiles-ln --verbose "$DOTFILES"
 else
   # Update all the dotfiles.
   "$DOTFILES"/bin/dotfiles-update
