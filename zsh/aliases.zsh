@@ -23,3 +23,21 @@ alias reload!='. ~/.zshrc'
 
 # Usage `license > MIT-LICENSE`
 alias license='curl -fsSL http://git.io/license | sh'
+
+# Tab completion for dotfiles.
+# Totally lifted from [rbenv](https://github.com/sstephenson/rbenv).
+compctl -K _dotfiles dotfiles
+
+_dotfiles() {
+  local word words completions
+  read -cA words
+  word="${words[2]}"
+
+  if [ "${#words}" -eq 2 ]; then
+    completions="$(dotfiles commands)"
+  else
+    completions="$(dotfiles completions "${word}")"
+  fi
+
+  reply=("${(ps:\n:)completions}")
+}

@@ -4,6 +4,12 @@ set -e
 #/
 #/ Installs the janus framework to `~/.vim`.
 
+# Provide dotfiles completions
+if [ "$1" = "--complete" ]; then
+  echo --update
+  exit
+fi
+
 case $1 in
 update)
   /bin/echo -n "Upgrade janus? (y/n): "
