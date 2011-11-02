@@ -44,4 +44,7 @@ If that all sounds a bit too scary for you then take a look at
 The dotfiles are managed by the `dotfiles(1)` command. For more
 information see `dotfiles help [<command>]`.
 
-Copyright (c) Chris Mytton
+## Author
+
+[Chris Mytton](http://hecticjeff.net/) -
+[@hecticjeff](http://twitter.com/hecticjeff)
