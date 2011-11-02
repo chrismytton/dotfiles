@@ -6,7 +6,7 @@ set -e
 
 # Provide dotfiles completions
 if [ "$1" = "--complete" ]; then
-  echo --update
+  echo update
   exit
 fi
 
