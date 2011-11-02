@@ -40,7 +40,7 @@ esac
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
 # loop over all the `.symlink` files
-for linkable in $DOTFILES/**/*.symlink
+for source in $DOTFILES/**/*.symlink
 do
   # reset these to false at the start of each loop
   overwrite=false
@@ -48,11 +48,8 @@ do
   skip=false
   quit=false
 
-  # file that we are symlinking to
-  source="$DOTFILES/$linkable"
-
   # the target for the symlink
-  target="$HOME/.`basename $linkable .symlink`"
+  target="$HOME/.`basename $source .symlink`"
 
   # check if the target is an existing file that's not a symlink.
   if [ -f "$target" -a ! -L "$target" ]; then
