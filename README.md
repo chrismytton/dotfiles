@@ -39,7 +39,7 @@ Then change your shell to zsh.
     chsh -s $(which zsh)
 
 If that all sounds a bit too scary for you then take a look at
-`install.sh` to get an idea for what this script does.
+`bin/dotfiles-install` to get an idea for what this script does.
 
 ## Usage
 
