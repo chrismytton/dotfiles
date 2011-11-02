@@ -18,7 +18,8 @@ if [ ! -d "$DOTFILES" ]; then
 fi
 
 # Symlink all the dotfiles.
-"$DOTFILES/bin/dotfiles-ln"
+cd "$DOTFILES"
+bin/dotfiles-ln
 
 # Tell the user how to get an easy `~/gitconfig`.
 if [ ! -f "$HOME/.gitconfig" ]; then
