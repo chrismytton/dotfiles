@@ -12,6 +12,8 @@ set -e
 
 DOTFILES=${1:-"$HOME/.dotfiles"}
 
+# If the dotfiles directory doesn't exists then we need to clone it
+# from GitHub.
 if [ ! -d "$DOTFILES" ]; then
   echo "Cloning dotfiles into $DOTFILES" >&2
   git clone -q "https://github.com/hecticjeff/dotfiles" "$DOTFILES"
