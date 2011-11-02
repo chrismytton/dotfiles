@@ -2,5 +2,5 @@
 
 cd "$ZSH"
 git pull
-dotfiles install
+dotfiles ln
 dotfiles janus update
