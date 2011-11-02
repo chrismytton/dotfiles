@@ -4,7 +4,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 # Load function in this path. Used for brew completion.
-fpath=("$ZSH/zsh/functions" $fpath)
+fpath=("$DOTFILES/zsh/functions" $fpath)
 
 export EDITOR='vim' # default editor
 

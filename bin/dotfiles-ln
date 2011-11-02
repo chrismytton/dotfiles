@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-#/ Usage: dotfiles ln [<options>] [<path>]
+#/ Usage: dotfiles ln [<options>]
 #/
 #/ Options
 #/   --skip-all
@@ -43,7 +43,7 @@ case "$1" in
     ;;
 esac
 
-DOTFILES=${1:-"$HOME/.dotfiles"}
+DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 
 # loop over all the `.symlink` files
 for source in $DOTFILES/**/*.symlink

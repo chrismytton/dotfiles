@@ -1,16 +1,16 @@
-export ZSH="$HOME/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 
 # Reset the path to include the sane defaults where system binaries live.
 path=(/usr/bin /bin /usr/sbin /sbin)
 
 # Add `/usr/local`'s bins to the path if it exists.
-if [[ -d "/usr/local" ]]; then
+if [ -d "/usr/local" ]; then
   path=(/usr/local/bin /usr/local/sbin $path)
 fi
 
-# If there is a bin directory in $ZSH then add that to the path.
-if [[ -d "$ZSH/bin" ]]; then
-  path=($ZSH/bin $path)
+# If there is a bin directory in $DOTFILES then add that to the path.
+if [ -d "$DOTFILES/bin" ]; then
+  path=($DOTFILES/bin $path)
 fi
 
 # Set the default manpath.

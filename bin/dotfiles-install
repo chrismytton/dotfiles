@@ -8,9 +8,12 @@ set -e
 #/ the script will first clone the dotfiles into <path>.
 #/
 #/ If you decide to install your files at a different 'path' then you will
-#/ also need to change the 'ZSH' variable at the top of `~/.zshrc'.
+#/ also need to change the 'DOTFILES' variable at the top of `~/.zshenv'.
 
-DOTFILES=${1:-"$HOME/.dotfiles"}
+# If the user has provided a path then that is the target, if there is already
+# a $DOTFILES in the environment we use that, otherwise we fallback to
+# '~/.dotfiles'.
+export DOTFILES=${1:-${DOTFILES:-"$HOME/.dotfiles"}}
 
 # If the dotfiles directory doesn't exists then we need to clone it
 # from GitHub.
