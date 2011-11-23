@@ -1,2 +1,2 @@
-au BufRead,BufNewFile *.hbs,*.ejs set filetype=html
+au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
