@@ -15,3 +15,11 @@ fi
 
 # Set the default manpath.
 manpath=(/usr/share/man /usr/local/share/man)
+
+# rbenv
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  if command -v rbenv &>/dev/null; then
+    eval "$(rbenv init -)"
+  fi
+fi
