@@ -14,3 +14,5 @@ npm-debug.log
 .cake_task_cache
 *.rbc
 .rbenv-version
+.tddium*
+.tddium
