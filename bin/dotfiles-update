@@ -15,4 +15,3 @@ fi
 # update janus.
 git pull origin master
 "$DOTFILES"/bin/dotfiles-ln
-"$DOTFILES"/bin/dotfiles-janus update
