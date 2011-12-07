@@ -31,6 +31,7 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   status = auto
   ui = auto
 [alias]
+  log = log --abbrev-commit --pretty=oneline
   st = status -sb
   p = push
   po = push origin master
