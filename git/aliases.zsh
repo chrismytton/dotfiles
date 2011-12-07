@@ -19,3 +19,5 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gx=gitx
+alias gl='git l'
+alias gpl = 'git pl'
