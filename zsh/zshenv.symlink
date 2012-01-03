@@ -18,7 +18,7 @@ manpath=(/usr/share/man /usr/local/share/man)
 
 # rbenv
 if [[ -d "$HOME/.rbenv/bin" ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  path=("$HOME/.rbenv/bin" $path)
   if command -v rbenv &>/dev/null; then
     eval "$(rbenv init -)"
   fi
