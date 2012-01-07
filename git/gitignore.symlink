@@ -5,7 +5,6 @@ tmp/**/*
 .localized
 .rspec
 .vagrant
-Vagrantfile
 .zfproject.xml
 nbproject
 .sass-cache/
@@ -13,6 +12,5 @@ npm-debug.log
 .powenv
 .cake_task_cache
 *.rbc
-.rbenv-version
 .tddium*
 .tddium
