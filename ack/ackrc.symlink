@@ -1,9 +1,9 @@
 --ignore-dir=cache
 --context
 --type-add
-html=.haml
+html=.haml,.eco
 --type-add
-css=.sass,.scss
+css=.sass,.scss,.less
 --type-set
 cucumber=.feature
 --type-set
