@@ -1,2 +1,5 @@
 colorscheme molokai
 set guifont=Meslo\ LG\ S:h12
+if has("gui_running")
+  set guioptions-=T
+endif
