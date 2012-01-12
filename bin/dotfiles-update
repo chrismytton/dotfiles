@@ -13,5 +13,5 @@ fi
 
 # Update the dotfiles from git, then `ln` them into place and offer to
 # update janus.
-git pull origin master
+git fetch origin && git merge origin/master
 "$DOTFILES"/bin/dotfiles-ln
