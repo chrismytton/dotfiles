@@ -9,4 +9,4 @@ else
   editor="vi"
 fi
 
-"$editor" "$DOTFILES"
+$editor "$DOTFILES"
