@@ -8,3 +8,5 @@ css=.sass,.scss,.less
 cucumber=.feature
 --type-set
 coffee-script=.coffee
+--type-set
+markdown=.md,.mkd,.mdown,.mkdown,.markdown
