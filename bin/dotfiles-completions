@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 # Completely stolen from [rbenv](https://github.com/sstephenson/rbenv).
