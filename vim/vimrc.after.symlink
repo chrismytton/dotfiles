@@ -1,3 +1,4 @@
+colorscheme molokai
 au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html
 au BufRead,BufNewFile Capfile set filetype=ruby
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
