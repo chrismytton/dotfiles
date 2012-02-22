@@ -46,4 +46,4 @@ _dotfiles() {
   reply=("${(ps:\n:)completions}")
 }
 
-alias html='curl -fsSL http://git.io/html5-mini-boilerplate'
+alias html='curl -fsSL http://git.io/gyaCFw'
