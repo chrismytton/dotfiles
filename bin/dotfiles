@@ -2,7 +2,7 @@
 set -e
 
 package='dotfiles'
-version=$(git rev-parse --short HEAD)
+version=$(cd ${DOTFILES} && git rev-parse --short HEAD)
 
 command="$1"
 
