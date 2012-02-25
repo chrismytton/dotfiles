@@ -2,13 +2,13 @@
 set -e
 
 package='dotfiles'
-version='0.0.1'
+version=$(git rev-parse --short HEAD)
 
 command="$1"
 
 case "$command" in
 "" | "-h" | "--help" )
-  echo -e "$package $version\n$($package-help)" >&2
+  echo -e "${package}@${version}\n$($package-help)" >&2
   ;;
 * )
   command_path="$(command -v "$package-$command" || true)"
