@@ -7,6 +7,9 @@ version=$(git rev-parse --short HEAD)
 command="$1"
 
 case "$command" in
+"-v" | "--version" )
+  echo "${package}@${version}" >&2
+  ;;
 "" | "-h" | "--help" )
   echo -e "${package}@${version}\n$($package-help)" >&2
   ;;
