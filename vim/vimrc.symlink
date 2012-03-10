@@ -8,6 +8,14 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
+set ruler                       " show line and column number
+set laststatus=2                " always show the status bar
+
+"" List chars
+set list                        " Show invisible characters
+set listchars=""                " Reset the listchars
+set listchars=tab:\ \           " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.          " show trailing spaces as dots
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -30,3 +38,30 @@ au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby " set files to be int
 "" Key mappings
 " Cleanup trailing whitespace and tabs with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+
+" NERDTree mappings
+map <leader>n :NERDTreeToggle<CR>
+
+" NERDCommenter mappings
+if has("gui_macvim") && has("gui_running")
+  map <D-/> <plug>NERDCommenterToggle<CR>
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+else
+  map <leader>/ <plug>NERDCommenterToggle<CR>
+  imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>i
+endif
+
+" CtrlP mappings
+let g:ctrlp_map = ''
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+  \ }
+
+if has("gui_macvim") && has("gui_running")
+  map <D-t> :CtrlP<CR>
+  imap <D-t> <ESC>:CtrlP<CR>
+else
+  map <C-t> :CtrlP<CR>
+  imap <C-t> <ESC>:CtrlP<CR>
+endif
