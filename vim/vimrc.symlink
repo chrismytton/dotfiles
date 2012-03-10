@@ -35,6 +35,17 @@ colorscheme molokai
 au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
 au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby " set files to be interpreted as ruby
 
+" Some file types should wrap their text
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
+
+" Markdown filetypes and text wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+
 "" Key mappings
 " Cleanup trailing whitespace and tabs with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
