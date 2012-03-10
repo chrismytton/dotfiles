@@ -1,4 +1,32 @@
+"" Pathogen
+source ~/.vimplugins/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('~/.vimplugins')
+
+set nocompatible                " choose no compatibility with legacy vi
+syntax enable
+set encoding=utf-8
+set showcmd                     " display incomplete commands
+filetype plugin indent on       " load file type plugins + indentation
+set number                      " show line numbers
+
+"" Whitespace
+set nowrap                      " don't wrap lines
+set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
+set expandtab                   " use spaces, not tabs (optional)
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
 colorscheme molokai
-au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html
-au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby
+
+"" File types
+au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
+au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby " set files to be interpreted as ruby
+
+"" Key mappings
+" Cleanup trailing whitespace and tabs with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
