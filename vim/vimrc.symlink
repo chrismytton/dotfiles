@@ -32,6 +32,10 @@ set smartcase                   " ... unless they contain at least one capital l
 colorscheme molokai
 
 "" File types
+"
+" In Makefiles, use real tabs, not tabs expanded to spaces
+au FileType make set noexpandtab
+
 au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
 au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby " set files to be interpreted as ruby
 
