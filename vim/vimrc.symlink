@@ -65,6 +65,10 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:
 " NERDTree mappings
 map <leader>n :NERDTreeToggle<CR>
 
+
+" Jump between buffers
+nnoremap ,, <c-^>
+
 " CtrlP mappings
 let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
