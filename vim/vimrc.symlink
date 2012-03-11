@@ -65,15 +65,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:
 " NERDTree mappings
 map <leader>n :NERDTreeToggle<CR>
 
-" NERDCommenter mappings
-if has("gui_macvim") && has("gui_running")
-  map <D-/> <plug>NERDCommenterToggle<CR>
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
-else
-  map <leader>/ <plug>NERDCommenterToggle<CR>
-  imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>i
-endif
-
 " CtrlP mappings
 let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
