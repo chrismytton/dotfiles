@@ -2,7 +2,8 @@
 set -e
 
 # Create vim directories for backups.
-mkdir -p "$HOME/.vim/{_backup,_temp}"
+mkdir -p "$HOME/.vim/_backup"
+mkdir -p "$HOME/.vim/_temp"
 
 # Grab the vimplugins repo.
 if [ ! -d "$HOME/.vim/bundle" ]; then
