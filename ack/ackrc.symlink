@@ -4,6 +4,8 @@
 html=.haml,.eco
 --type-add
 css=.sass,.scss,.less
+--type-add
+ruby=.jbuilder
 --type-set
 cucumber=.feature
 --type-set
