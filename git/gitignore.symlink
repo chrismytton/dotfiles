@@ -3,7 +3,6 @@
 Thumbs.db
 tmp/**/*
 .localized
-.rspec
 .vagrant
 .zfproject.xml
 nbproject
