@@ -1,3 +1,6 @@
+# Make copy and paste work on a Mac (see http://cl.ly/23230J1r3W2L1u0k3q3i).
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
 set -g default-terminal "screen-256color"
 
 # act like vim
