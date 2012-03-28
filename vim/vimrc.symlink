@@ -33,10 +33,6 @@ set smartcase                   " ... unless they contain at least one capital l
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_temp//      " where to put swap files.
 
-"" Change clipboard to be compatible with tmux
-"" - http://cl.ly/23230J1r3W2L1u0k3q3i
-set clipboard=unnamed
-
 colorscheme molokai
 
 "" File types
