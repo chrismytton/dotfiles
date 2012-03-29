@@ -12,6 +12,7 @@ bind-key -r C-l select-window -t :+
 # act like GNU screen
 unbind C-b
 set -g prefix C-a
+bind C-a send-prefix
 
 # Better splitting
 unbind %
