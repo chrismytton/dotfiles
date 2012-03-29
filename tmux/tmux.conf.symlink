@@ -17,3 +17,6 @@ set -g prefix C-a
 unbind %
 bind | split-window -h
 bind - split-window -v
+
+# Mouse integration.
+set -g mode-mouse on
