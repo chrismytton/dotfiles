@@ -21,3 +21,11 @@ bind - split-window -v
 
 # Mouse integration.
 set -g mode-mouse on
+
+# Force a reload of the config file.
+unbind r
+bind r source-file ~/.tmux.conf
+
+# Quickly cycle between panes.
+unbind ^A
+bind ^A select-pane -t :.+
