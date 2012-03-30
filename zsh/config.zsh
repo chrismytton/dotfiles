@@ -6,6 +6,8 @@ SAVEHIST=10000
 # Load function in this path. Used for brew completion.
 fpath=("$DOTFILES/zsh/functions" $fpath)
 
+bindkey -v # Use vi keys
+
 export EDITOR='vim -f' # default editor
 
 export CLICOLOR=true # Make commands like ls use color.
@@ -30,3 +32,4 @@ setopt SHARE_HISTORY # Share history between tabs.
 # Search history when you have typed a command and press up.
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
