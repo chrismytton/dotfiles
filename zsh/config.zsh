@@ -6,8 +6,6 @@ SAVEHIST=10000
 # Load function in this path. Used for brew completion.
 fpath=("$DOTFILES/zsh/functions" $fpath)
 
-bindkey -v # Use vi keys
-
 export EDITOR='vim -f' # default editor
 
 export CLICOLOR=true # Make commands like ls use color.
