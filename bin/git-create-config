@@ -45,12 +45,15 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   b = branch
   ba = branch -a
   x = !gitx
+  ctags = !.git/hooks/ctags
 [core]
   excludesfile = $HOME/.gitignore
 [instaweb]
   httpd = webrick
 [push]
   default = current
+[init]
+  templatedir = ~/.git_template
 GITCONFIG
 else
   echo "existing ~/.gitconfig found, use --force to override" >&2
