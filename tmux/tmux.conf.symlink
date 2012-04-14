@@ -33,3 +33,6 @@ bind r source-file ~/.tmux.conf
 # Quickly cycle between panes.
 unbind ^A
 bind ^A select-pane -t :.+
+
+# Style the status bar.
+set-option -g status-bg colour8
