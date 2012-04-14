@@ -36,3 +36,9 @@ bind ^A select-pane -t :.+
 
 # Style the status bar.
 set-option -g status-bg colour8
+
+# Open a manpage in a split.
+bind-key / command-prompt "split-window 'exec man %%'"
+
+# Open an ssh session in a new window.
+bind-key S command-prompt "new-window -n %1 'ssh %1'"
