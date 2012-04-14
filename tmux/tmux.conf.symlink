@@ -31,7 +31,7 @@ set-option -g mode-mouse on
 bind-key R source-file ~/.tmux.conf \; display-message "source-file done"
 
 # Quickly cycle between panes.
-bind-key C-a select-pane -t :.+
+bind-key C-w select-pane -t :.+
 
 # Easily resize panes.
 bind-key C-h resize-pane -L 5
@@ -40,7 +40,7 @@ bind-key C-j resize-pane -D 5
 bind-key C-k resize-pane -U 5
 
 # Quickly cycle between windows.
-bind-key C-w select-window -l
+bind-key C-a select-window -l
 
 # Open a manpage in a split.
 bind-key / command-prompt "split-window 'exec man %%'"
