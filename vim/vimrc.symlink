@@ -84,6 +84,6 @@ if has("gui_macvim") && has("gui_running")
   map <D-t> :CtrlP<CR>
   imap <D-t> <ESC>:CtrlP<CR>
 else
-  map <C-t> :CtrlP<CR>
-  imap <C-t> <ESC>:CtrlP<CR>
+  map <C-p> :CtrlP<CR>
+  imap <C-p> <ESC>:CtrlP<CR>
 endif
