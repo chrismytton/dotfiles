@@ -10,10 +10,6 @@ alias ll='ls -l'
 # List all files.
 alias l='ls -laF'
 
-# Quick vim.
-alias v='vim'
-alias m='mvim'
-
 # Create a new directory and `cd` into it.
 take() {
   mkdir "$1" && cd "$1"
