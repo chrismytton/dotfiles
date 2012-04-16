@@ -21,8 +21,6 @@ alias _='sudo'
 # Update and edit dotfiles.
 alias reload!='. ~/.zshrc'
 
-# Usage `license > MIT-LICENSE`
-alias license='curl -fsSL http://git.io/license | sh'
 
 # Tab completion for dotfiles.
 # Totally lifted from [rbenv](https://github.com/sstephenson/rbenv).
@@ -41,5 +39,3 @@ _dotfiles() {
 
   reply=("${(ps:\n:)completions}")
 }
-
-alias html='curl -fsSL http://git.io/gyaCFw'
