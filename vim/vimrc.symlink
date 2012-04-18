@@ -75,7 +75,7 @@ nnoremap ,, <c-^>
 
 " CtrlP mappings
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
