@@ -74,7 +74,6 @@ map <leader>n :NERDTreeToggle<CR>
 nnoremap ,, <c-^>
 
 " CtrlP mappings
-let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
@@ -83,7 +82,4 @@ let g:ctrlp_custom_ignore = {
 if has("gui_macvim") && has("gui_running")
   map <D-t> :CtrlP<CR>
   imap <D-t> <ESC>:CtrlP<CR>
-else
-  map <C-p> :CtrlP<CR>
-  imap <C-p> <ESC>:CtrlP<CR>
 endif
