@@ -93,3 +93,6 @@ runtime ftplugin/man.vim
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
+
+" Map W to w
+command! W :w
