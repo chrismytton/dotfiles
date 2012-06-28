@@ -56,6 +56,8 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   templatedir = ~/.git_template
 [help]
   autocorrect = 1
+[credential]
+  helper = osxkeychain
 GITCONFIG
 else
   echo "existing ~/.gitconfig found, use --force to override" >&2
