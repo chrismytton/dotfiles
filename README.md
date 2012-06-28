@@ -29,8 +29,9 @@ package manager.
 
 ### Automated install
 
-Run the following to get the dotfiles you are looking at, this
-will also install a gitconfig if it's missing and janus.
+Running the following command will clone this repository into
+`~/.dotfiles` then symlink any `*.symlink` files and directories into
+`~`.
 
     sh <(curl -fsSL git.io/~hecticjeff)
 
