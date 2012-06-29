@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-My awesome dotfiles, directory structure is stolen from [@holman's
+My awesome dotfiles, directory structure is ~~stolen from~~ inspired by [@holman's
 dotfiles](https://github.com/holman/dotfiles). Installing and management
 is all done in shell.
 
