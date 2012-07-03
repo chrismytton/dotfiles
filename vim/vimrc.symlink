@@ -24,6 +24,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 
+" Colorscheme
 Bundle 'altercation/vim-colors-solarized'
 
 syntax enable
