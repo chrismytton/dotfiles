@@ -1,8 +1,31 @@
-"" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
 set nocompatible                " choose no compatibility with legacy vi
+filetype off
+
+"" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" File navigation, searching and versioning.
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+
+" Editing helpers.
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'sickill/vim-pasta'
+
+" Language packs.
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
+
+Bundle 'altercation/vim-colors-solarized'
+
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
