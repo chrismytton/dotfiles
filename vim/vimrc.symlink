@@ -33,6 +33,7 @@ set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set number                      " show line numbers
 set ruler                       " show line and column number
+set cursorline                  " highlight the line containing the cursor
 set laststatus=2                " always show the status bar
 
 "" List chars
