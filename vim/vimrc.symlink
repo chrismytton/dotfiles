@@ -93,10 +93,6 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " Cleanup trailing whitespace and tabs with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
-" NERDTree mappings
-map <leader>n :NERDTreeToggle<CR>
-
-
 " Jump between buffers
 nnoremap ,, <c-^>
 
