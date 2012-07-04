@@ -43,7 +43,7 @@ bind-key C-j resize-pane -D 5
 bind-key C-k resize-pane -U 5
 
 # Quickly cycle between windows.
-bind-key C-a select-window -l
+bind-key C-a last-window
 
 # Open a manpage in a split.
 bind-key / command-prompt "split-window 'exec man %%'"
