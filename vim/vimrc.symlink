@@ -58,6 +58,9 @@ set smartcase                   " ... unless they contain at least one capital l
 set wildmode=longest,list,full
 set wildmenu
 
+"" Only show longest shared match for completion.
+set completeopt+=longest
+
 "" Text formatting
 set textwidth=80                " wrap at 80 chars by default"
 
