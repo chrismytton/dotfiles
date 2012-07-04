@@ -71,27 +71,10 @@ set directory=~/.vim/_temp//      " where to put swap files.
 set background=dark
 colorscheme solarized
 
-"" File types
-au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
-
-" Some file types should wrap their text
-function! s:setupWrapping()
-  set wrap
-  set linebreak
-  set textwidth=72
-  set nolist
-endfunction
-
-" Markdown filetypes and text wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
-
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
-
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 "" Key mappings
 " Cleanup trailing whitespace and tabs with F5
