@@ -35,6 +35,7 @@ set number                      " show line numbers
 set ruler                       " show line and column number
 set cursorline                  " highlight the line containing the cursor
 set laststatus=2                " always show the status bar
+set scrolloff=3                 " leave some context when scrolling
 
 "" List chars
 set list                        " Show invisible characters
