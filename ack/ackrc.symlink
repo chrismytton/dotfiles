@@ -1,14 +1,9 @@
---ignore-dir=cache
---context
---type-add
-html=.haml,.eco
---type-add
-css=.sass,.scss,.less
---type-add
-ruby=.jbuilder
---type-set
-cucumber=.feature
---type-set
-coffee-script=.coffee
---type-set
-markdown=.md,.mkd,.mdown,.mkdown,.markdown
+# Add file extensions to existing file types.
+--type-add=html=.haml,.eco
+--type-add=css=.sass,.scss,.less
+--type-add=ruby=.jbuilder
+
+# Define some new file type extensions.
+--type-set=cucumber=.feature
+--type-set=coffee-script=.coffee
+--type-set=markdown=.md,.mkd,.mdown,.mkdown,.markdown
