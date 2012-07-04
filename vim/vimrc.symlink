@@ -72,10 +72,6 @@ set background=dark
 colorscheme solarized
 
 "" File types
-"
-" In Makefiles, use real tabs, not tabs expanded to spaces
-au FileType make set noexpandtab
-
 au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
 
 " Some file types should wrap their text
