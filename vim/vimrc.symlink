@@ -117,8 +117,9 @@ runtime ftplugin/man.vim
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
-" Map W to w
+" Map W and Q to their smaller counterparts.
 command! W :w
+command! Q :q
 
 " Tab completion in insert mode (adapted from :help ins-completion)
 function! CleverTab()
