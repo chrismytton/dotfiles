@@ -77,7 +77,6 @@ colorscheme solarized
 au FileType make set noexpandtab
 
 au BufRead,BufNewFile *.hbs,*.ejs,*.jeco set filetype=html " set files to be interpreted as html
-au BufRead,BufNewFile Capfile,*.jbuilder set filetype=ruby " set files to be interpreted as ruby
 
 " Some file types should wrap their text
 function! s:setupWrapping()
