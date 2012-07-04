@@ -2,7 +2,7 @@ set nocompatible                " choose no compatibility with legacy vi
 filetype off
 
 "" Vundle
-set rtp+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
