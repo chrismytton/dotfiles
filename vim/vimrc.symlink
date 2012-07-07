@@ -37,6 +37,9 @@ set cursorline                  " highlight the line containing the cursor
 set laststatus=2                " always show the status bar
 set scrolloff=3                 " leave some context when scrolling
 
+" Use , as the leader key.
+let mapleader=","
+
 "" List chars
 set list                        " Show invisible characters
 set listchars=""                " Reset the listchars
