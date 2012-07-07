@@ -1,5 +1,6 @@
 set guifont=Meslo\ LG\ S:h12
-if has("gui_running")
+
+if has("gui_macvim") && has("gui_running")
   " CtrlP OS-X Menu remapping
   macmenu &File.New\ Tab key=<D-S-t>
   map <D-t> :CtrlP<CR>
