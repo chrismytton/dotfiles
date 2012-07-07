@@ -85,7 +85,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
 " Jump between buffers
-nnoremap ,, <c-^>
+nnoremap <leader><leader> <C-^>
 
 " CtrlP mappings
 let g:ctrlp_custom_ignore = {
