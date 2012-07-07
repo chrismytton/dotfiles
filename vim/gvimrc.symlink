@@ -1,4 +1,3 @@
-colorscheme solarized
 set guifont=Meslo\ LG\ S:h12
 if has("gui_running")
   " CtrlP OS-X Menu remapping
