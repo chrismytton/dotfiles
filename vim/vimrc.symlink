@@ -93,11 +93,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
-if has("gui_macvim") && has("gui_running")
-  map <D-t> :CtrlP<CR>
-  imap <D-t> <ESC>:CtrlP<CR>
-endif
-
 " Man page viewer
 runtime ftplugin/man.vim
 
