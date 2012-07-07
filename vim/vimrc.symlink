@@ -87,6 +87,9 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:
 " Jump between buffers
 nnoremap <leader><leader> <C-^>
 
+" Use leader-f to start an ack search.
+map <leader>f :Ack!<SPACE>
+
 " CtrlP mappings
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',

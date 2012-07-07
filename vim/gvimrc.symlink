@@ -8,4 +8,9 @@ if has("gui_macvim") && has("gui_running")
 
   " Hide MacVim menubar
   set guioptions-=T
+
+  " Ack with Cmd-F
+  macmenu &Edit.Find.Find\.\.\. key=<D-S-f>
+  map <D-f> :Ack!<SPACE>
+  imap <D-f> <ESC>:Ack!<SPACE>
 endif
