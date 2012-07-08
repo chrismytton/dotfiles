@@ -88,7 +88,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:
 nnoremap <leader><leader> <C-^>
 
 " Use leader-f to start an ack search.
-map <leader>f :Ack!<SPACE>
+nnoremap <leader>f :Ack!<SPACE>
 
 " CtrlP mappings
 let g:ctrlp_custom_ignore = {
