@@ -90,6 +90,9 @@ nnoremap <leader><leader> <C-^>
 " Use leader-f to start an ack search.
 nnoremap <leader>f :Ack!<SPACE>
 
+" Map Tab to jump between brackets, quotes etc.
+nnoremap <TAB> %
+
 " CtrlP mappings
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',
