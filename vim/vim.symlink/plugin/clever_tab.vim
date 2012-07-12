@@ -4,7 +4,7 @@ function! CleverTab()
   if !col || getline('.')[col - 1] !~ '\k'
     return "\<Tab>"
   else
-    return "\<C-N>"
+    return "\<C-P>"
   endif
 endfunction
 inoremap <Tab> <C-R>=CleverTab()<CR>
