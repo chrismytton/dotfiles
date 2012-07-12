@@ -59,7 +59,7 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 "" zsh like command mode completion
-set wildmode=longest,list,full
+set wildmode=longest,list:longest,full
 set wildmenu
 
 "" Only show longest shared match for completion.
