@@ -22,3 +22,4 @@ alias gx=gitx
 alias gl='git l'
 alias gpl='git pl'
 alias gr='git remote -v'
+alias gfp='git fetch --all --prune'
