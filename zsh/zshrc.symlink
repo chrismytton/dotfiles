@@ -12,6 +12,10 @@ for module ($DOTFILES/**/*.zsh) source "$module"
 # Completion
 autoload compinit && compinit
 
+if command -v direnv > /dev/null; then
+  eval `direnv hook zsh`
+fi
+
 # put secret stuff in here
 if [[ -a ~/.localrc ]]
 then
