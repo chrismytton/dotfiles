@@ -97,6 +97,9 @@ nnoremap <leader>f :Ack!<SPACE>
 " Map Tab to jump between brackets, quotes etc.
 nnoremap <TAB> %
 
+" This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " CtrlP custom ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',
@@ -105,9 +108,6 @@ let g:ctrlp_custom_ignore = {
 
 " Man page viewer
 runtime ftplugin/man.vim
-
-"This unsets the "last search pattern" register by hitting return
-nnoremap <CR> :noh<CR><CR>
 
 " Map W and Q to their smaller counterparts.
 command! W :w
