@@ -97,7 +97,7 @@ nnoremap <leader>f :Ack!<SPACE>
 " Map Tab to jump between brackets, quotes etc.
 nnoremap <TAB> %
 
-" CtrlP mappings
+" CtrlP custom ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
