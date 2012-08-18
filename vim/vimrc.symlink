@@ -81,7 +81,10 @@ colorscheme solarized
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
-"" Key mappings
+""""""
+"""""" Key mappings
+""""""
+
 " Cleanup trailing whitespace and tabs with F5
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 
