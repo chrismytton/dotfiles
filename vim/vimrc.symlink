@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
 
 " Editing helpers.
 Bundle 'tpope/vim-surround'
