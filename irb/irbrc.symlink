@@ -12,6 +12,10 @@ class Object
     file, line = method(method_name).source_location
     `mvim '#{file}' +#{line}`
   end
+
+  def my_public_methods
+    (public_methods - Object.methods).sort
+  end
 end
 
 # Break out of the Bundler jail
