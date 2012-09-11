@@ -8,6 +8,11 @@ if [ -d "/usr/local" ]; then
   path=(/usr/local/bin /usr/local/sbin $path)
 fi
 
+# Add npm's bin to the path if it exists.
+if [ -d "/usr/local/share/npm/bin" ]; then
+  path=(/usr/local/share/npm/bin $path)
+fi
+
 # If there is a bin directory in $DOTFILES then add that to the path.
 if [ -d "$DOTFILES/bin" ]; then
   path=($DOTFILES/bin $path)
