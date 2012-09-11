@@ -22,7 +22,9 @@ fi
 manpath=(/usr/share/man /usr/local/share/man)
 
 # rbenv
-if [[ -d "$HOME/.rbenv/bin" ]]; then
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+elif [[ -d "$HOME/.rbenv/bin" ]]; then
   path=("$HOME/.rbenv/bin" $path)
   if command -v rbenv &>/dev/null; then
     eval "$(rbenv init -)"
