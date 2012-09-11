@@ -25,6 +25,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'groenewege/vim-less'
+Bundle 'jnwhiteh/vim-golang'
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
