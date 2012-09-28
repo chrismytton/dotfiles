@@ -14,13 +14,6 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   name = $user_name
   email = $user_email
 [color]
-  branch = auto
-  diff = auto
-  grep = auto
-  interactive = auto
-  pager = true
-  showbranch = auto
-  status = auto
   ui = auto
 [alias]
   l = log --abbrev-commit --pretty=oneline
