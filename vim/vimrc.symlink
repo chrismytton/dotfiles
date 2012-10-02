@@ -68,7 +68,7 @@ set wildmenu
 set complete=.,b,u,]
 
 "" Text formatting
-set textwidth=80                " wrap at 80 chars by default"
+set wrap
 
 "" Backup and swap files
 set backupdir=~/.vim/_backup//    " where to put backup files.
