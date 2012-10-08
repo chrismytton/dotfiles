@@ -11,6 +11,7 @@ if has("gui_macvim") && has("gui_running")
 
   " Hide MacVim scrollbar
   set guioptions-=r
+  set guioptions-=L
 
   " Ack with Cmd-F
   macmenu &Edit.Find.Find\.\.\. key=<D-S-f>
