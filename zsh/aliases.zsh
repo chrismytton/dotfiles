@@ -39,3 +39,9 @@ _dotfiles() {
 
   reply=("${(ps:\n:)completions}")
 }
+
+ack() {
+  echo "Running ag in 1 second"
+  sleep 1
+  ag "$@"
+}

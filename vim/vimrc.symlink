@@ -82,6 +82,9 @@ colorscheme solarized
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
+" Configure ack.vim to use ag(1)
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 """"""
 """""" Key mappings
 """"""
