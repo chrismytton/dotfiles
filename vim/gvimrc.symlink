@@ -1,4 +1,4 @@
-set guifont=Meslo\ LG\ S:h12
+set guifont=Meslo\ LG\ S:h13
 
 if has("gui_macvim") && has("gui_running")
   " CtrlP OS-X Menu remapping
