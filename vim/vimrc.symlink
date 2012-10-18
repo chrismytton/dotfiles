@@ -27,6 +27,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'xhr/vim-io'
+Bundle 'docteurklein/vim-phpunit'
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
