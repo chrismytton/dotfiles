@@ -1,0 +1,32 @@
+{
+  "cookbooks": ["http://github.com/hecticjeff/osx-cookbooks/tarball/master"],
+  "run_list": [
+    "git",
+    "homebrew",
+    "macvim",
+    "gitx",
+    "xquartz"
+  ],
+  "homebrew": {
+    "formulas": [
+      "nginx",
+      "mongodb",
+      "redis",
+      "ruby-build",
+      "rbenv",
+      "reattach-to-user-namespace",
+      "tmux",
+      "ctags",
+      "ack",
+      "hub",
+      "ssh-copy-id",
+      "qt",
+      "direnv",
+      "tree",
+      "proctools",
+      "psgrep",
+      "node",
+      "mysql"
+    ]
+  }
+}
