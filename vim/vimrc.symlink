@@ -42,6 +42,7 @@ set cursorline                  " highlight the line containing the cursor
 set laststatus=2                " always show the status bar
 set scrolloff=3                 " leave some context when scrolling
 set hidden                      " allow buffers to be hidden
+set clipboard=unnamed           " fix clipboard access in terminal
 
 " Use , as the leader key.
 let mapleader=","
