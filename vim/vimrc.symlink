@@ -110,6 +110,9 @@ nnoremap <CR> :noh<CR><CR>
 " Quickly jump in and out of paste mode.
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
 
+" Toggle NERDTree with <leader>e
+nnoremap <leader>e :NERDTreeToggle<CR>
+
 " CtrlP custom ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$',
