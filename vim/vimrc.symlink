@@ -125,3 +125,6 @@ runtime ftplugin/man.vim
 " Map W and Q to their smaller counterparts.
 command! W :w
 command! Q :q
+
+" Skip the vim intro screen
+set shortmess+=I
