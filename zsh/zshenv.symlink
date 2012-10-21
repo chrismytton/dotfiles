@@ -27,6 +27,4 @@ if [[ -d "$HOME/.rbenv/bin" ]]; then
 fi
 
 # rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
