@@ -119,9 +119,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
-" Man page viewer
-runtime ftplugin/man.vim
-
 " Map W and Q to their smaller counterparts.
 command! W :w
 command! Q :q
