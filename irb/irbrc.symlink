@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
 
+# Break out of the Bundler jail
+# from https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
+if defined? Bundler
+  Gem.post_reset_hooks.reject! { |hook| hook.source_location.first =~ %r{/bundler/} }
+  Gem::Specification.reset
+  load 'rubygems/custom_require.rb'
+end
+
 begin
   require "pry"
   Pry.start
@@ -24,14 +32,6 @@ class Object
   def my_public_methods
     (public_methods - Object.methods).sort
   end
-end
-
-# Break out of the Bundler jail
-# from https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
-if defined? Bundler
-  Gem.post_reset_hooks.reject! { |hook| hook.source_location.first =~ %r{/bundler/} }
-  Gem::Specification.reset
-  load 'rubygems/custom_require.rb'
 end
 
 if defined? Rails
