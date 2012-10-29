@@ -25,6 +25,7 @@ bind attach <return> view-mailcap
 set sort=threads
 set sort_aux = 'reverse-last-date-received'
 
+# Remove the '+' at the start of wrapped lines.
 set markers=no
 
 set timeout = 3
