@@ -126,3 +126,5 @@ command! Q :q
 
 " Skip the vim intro screen
 set shortmess+=I
+
+let g:markdown_fenced_languages = ['ruby']
