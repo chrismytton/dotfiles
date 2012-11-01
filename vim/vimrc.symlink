@@ -28,7 +28,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'xhr/vim-io'
 Bundle 'docteurklein/vim-phpunit'
-Bundle 'vim-scripts/php.vim-html-enhanced'
 
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
