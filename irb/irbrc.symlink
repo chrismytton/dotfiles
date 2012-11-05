@@ -8,14 +8,6 @@ if defined? Bundler
   load 'rubygems/custom_require.rb'
 end
 
-begin
-  require "pry"
-  Pry.start
-  exit
-rescue LoadError => e
-  warn "=> Unable to load pry"
-end
-
 require 'irb/completion'
 require 'irb/ext/save-history'
 
