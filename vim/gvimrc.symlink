@@ -1,6 +1,7 @@
-set guifont=Meslo\ LG\ S:h13
-
 if has("gui_macvim") && has("gui_running")
+  " Make the default font bigger.
+  set guifont=Menlo:h13
+
   " CtrlP OS-X Menu remapping
   macmenu &File.New\ Tab key=<D-S-t>
   map <D-t> :CtrlP<CR>
