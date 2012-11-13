@@ -45,3 +45,5 @@ ack() {
   sleep 1
   ag "$@"
 }
+
+alias sw='simple'
