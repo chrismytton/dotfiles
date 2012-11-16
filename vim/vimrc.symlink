@@ -50,7 +50,7 @@ let mapleader=","
 "" List chars
 set list                        " Show invisible characters
 set listchars=""                " Reset the listchars
-set listchars=tab:\ \           " a tab should display as "  ", trailing whitespace as "."
+set listchars=tab:\ \           " a tab should display as "  "
 set listchars+=trail:.          " show trailing spaces as dots
 
 "" Whitespace
