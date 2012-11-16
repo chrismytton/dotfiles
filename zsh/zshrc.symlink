@@ -1,11 +1,3 @@
-# Put local config options in ~/.localenv. This is loaded before
-# the rest of the dotfiles, so don't put anything secret in here,
-# use `~/.localrc` for that (see the end of this file).
-if [[ -a ~/.localenv ]]
-then
- source ~/.localenv
-fi
-
 # Load all the zsh files in the dotfiles.
 for module ($DOTFILES/**/*.zsh) source "$module"
 
@@ -14,10 +6,4 @@ autoload compinit && compinit
 
 if command -v direnv > /dev/null; then
   eval `direnv hook zsh`
-fi
-
-# put secret stuff in here
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
 fi
