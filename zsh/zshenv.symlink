@@ -21,11 +21,6 @@ fi
 # Set the default manpath.
 manpath=(/usr/share/man /usr/local/share/man)
 
-# Add rbenv to path.
-if [[ -d "$HOME/.rbenv/bin" ]]; then
-  path=("$HOME/.rbenv/bin" $path)
-fi
-
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
