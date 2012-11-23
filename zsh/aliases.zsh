@@ -47,3 +47,5 @@ ack() {
 }
 
 alias sw='simple'
+
+alias simplehttp="python -m SimpleHTTPServer"
