@@ -48,4 +48,4 @@ ack() {
 
 alias sw='simple'
 
-alias simplehttp="python -m SimpleHTTPServer"
+alias httpserver="python -m SimpleHTTPServer"
