@@ -1,5 +1,5 @@
 source /usr/local/share/chruby/chruby.sh
 
-RUBIES=(~/.rbenv/versions/*)
+RUBIES=(~/.rubies/*)
 
 chruby 1.9.3-p327
