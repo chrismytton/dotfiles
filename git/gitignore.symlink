@@ -16,3 +16,4 @@ npm-debug.log
 *.sw*
 .env
 .envrc
+.foreman
