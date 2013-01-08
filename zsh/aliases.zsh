@@ -48,6 +48,7 @@ ack() {
 
 alias sw='simple'
 
+# Usage: httpserver [<port>]
 httpserver() {
   python -m SimpleHTTPServer "$@"
 }
