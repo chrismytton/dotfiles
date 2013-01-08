@@ -48,4 +48,6 @@ ack() {
 
 alias sw='simple'
 
-alias httpserver="python -m SimpleHTTPServer"
+httpserver() {
+  python -m SimpleHTTPServer "$@"
+}
