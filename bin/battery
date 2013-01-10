@@ -1,122 +1,143 @@
 #!/bin/sh
 
-HEART_FULL=♥
-HEART_EMPTY=♡
-[ -z "$NUM_HEARTS" ] &&
-    NUM_HEARTS=5
-
-cutinate()
+battery_charge()
 {
-    perc=$1
-    inc=$(( 100 / $NUM_HEARTS))
-
-
-    for i in `seq $NUM_HEARTS`; do
-        if [ $perc -lt 100 ]; then
-            echo $HEART_EMPTY
-        else
-            echo $HEART_FULL
+    ioreg -c AppleSmartBattery -w0 | \
+    grep -o '"[^"]*" = [^ ]*' | \
+    sed -e 's/= //g' -e 's/"//g' | \
+    sort | \
+    while read key value; do
+        case $key in
+            "MaxCapacity")
+                export maxcap=$value;;
+            "CurrentCapacity")
+                export curcap=$value;;
+        esac
+        if [[ -n "$maxcap" && -n $curcap ]]; then
+            CAPACITY=$(( 100 * curcap / maxcap))
+            printf "%d" $CAPACITY
+            break
         fi
-        perc=$(( $perc + $inc ))
     done
 }
 
-linux_get_bat ()
-{
-    bf=$(cat $BAT_FULL)
-    bn=$(cat $BAT_NOW)
-    BAT=`echo "100 * $bn / $bf" | bc`
-    echo $BAT
-}
+#
+# Run Battery
+#
 
-freebsd_get_bat ()
-{
-    echo "$(sysctl -n hw.acpi.battery.life)"
-
-}
-
-# Do with grep and awk unless too hard
-
-# TODO Identify which machine we're on from teh script.
-
-battery_status()
-{
-case $(uname -s) in
-    "Linux")
-        BATPATH=${BATPATH:-/sys/class/power_supply/BAT0}
-        STATUS=$BATPATH/status
-        if [ -f "$BATPATH/energy_full" ]; then
-            naming="energy"
-        elif [ -f "$BATPATH/charge_full" ]; then
-            naming="charge"
-        fi
-        BAT_FULL=$BATPATH/${naming}_full
-        BAT_NOW=$BATPATH/${naming}_now
-        if [ "$1" = `cat $STATUS` -o "$1" = "" ]; then
-            linux_get_bat
-        fi
-        ;;
-    "FreeBSD")
-        STATUS=`sysctl -n hw.acpi.battery.state`
-        case $1 in
-            "Discharging")
-                if [ $STATUS -eq 1 ]; then
-                    freebsd_get_bat
-                fi
-                ;;
-            "Charging")
-                if [ $STATUS -eq 2 ]; then
-                    freebsd_get_bat
-                fi
-                ;;
-            "")
-                freebsd_get_bat
-                ;;
-        esac
-        ;;
-    "Darwin")
-        case $1 in
-            "Discharging")
-                ext="No";;
-            "Charging")
-                ext="Yes";;
-        esac
-
-        ioreg -c AppleSmartBattery -w0 | \
-        grep -o '"[^"]*" = [^ ]*' | \
-        sed -e 's/= //g' -e 's/"//g' | \
-        sort | \
-        while read key value; do
-            case $key in
-                "MaxCapacity")
-                    export maxcap=$value;;
-                "CurrentCapacity")
-                    export curcap=$value;;
-                "ExternalConnected")
-                    if [ "$ext" != "$value" ]; then
-                        exit
-                    fi
-                ;;
-                "FullyCharged")
-                    if [ "$value" = "Yes" ]; then
-                        exit
-                    fi
-                ;;
-            esac
-            if [[ -n "$maxcap" && -n $curcap ]]; then
-                echo "100 * $curcap / $maxcap" | bc
-                break
-            fi
-        done
-esac
-}
-
-BATTERY_STATUS=`battery_status $1`
+BATTERY_STATUS=`battery_charge`
 [ -z "$BATTERY_STATUS" ] && exit
 
-if [ -n "$CUTE_BATTERY_INDICATOR" ]; then
-    cutinate $BATTERY_STATUS
-else
-    echo ${BATTERY_STATUS}%
+#
+# Read args
+#
+
+while getopts ":g:m:w:o:h" opt; do
+  case $opt in
+    g)
+      if [ "$good_color" == "" ]; then
+        good_color=$OPTARG
+      fi
+      ;;
+    m)
+      if [ "$middle_color" == "" ]; then
+        middle_color=$OPTARG
+      fi
+      ;;
+    w)
+      if [ "$warn_color" == "" ]; then
+        warn_color=$OPTARG
+      fi
+      ;;
+    o)
+      if [ "$output" == "" ]; then
+        output=$OPTARG
+      fi
+      ;;
+    h)
+      echo "Usage: battery [-g good battery status color, default green or 1;32] [-m middle battery status color, default yellow or 1;33] [-w warn batttery status color, default red or 0;31] [-o specifies output format, use -o tmux to specify tmux status bar format]"
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG"
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument"
+      exit 1
+      ;;
+  esac
+done
+
+tmux=false
+
+if [ "$output" == "tmux" ]; then
+  tmux=true
 fi
 
+#
+# For default behavior when no different colors are specified
+#
+
+if [ "$good_color" == "" ]; then
+  case "$tmux" in
+    true) good_color="green" ;;
+    false) good_color="1;32" ;;
+  esac
+fi
+
+if [ "$middle_color" == "" ]; then
+  case "$tmux" in
+    true) middle_color="yellow" ;;
+    false) middle_color="1;33" ;;
+  esac
+fi
+
+if [ "$warn_color" == "" ]; then
+  case "$tmux" in
+    true) warn_color="red" ;;
+    false) warn_color="0;31" ;;
+  esac
+fi
+
+#
+# Apply the correct color to the battery status prompt
+#
+
+if [ $BATTERY_STATUS -ge 75 ]; then
+
+    # Green
+    case "$tmux" in
+        true) COLOR="#[fg=$good_color]" ;;
+        false) COLOR=$good_color ;;
+    esac
+
+elif [ $BATTERY_STATUS -ge 25 ] && [ $BATTERY_STATUS -lt 75 ]; then
+
+    # Yellow
+    case "$tmux" in
+        true) COLOR="#[fg=$middle_color]" ;;
+        false) COLOR=$middle_color ;;
+    esac
+
+elif [ $BATTERY_STATUS -lt 25 ]; then
+
+    # Red
+    case "$tmux" in
+        true) COLOR="#[fg=$warn_color]" ;;
+        false) COLOR=$warn_color ;;
+    esac
+
+fi
+
+#
+# Print the battery status
+#
+
+GRAPH=$(spark 0 ${BATTERY_STATUS} 100 | awk '{print substr($0,4,3)}')
+
+if [ "$tmux" == "false" ]; then
+    printf "\e[0;%sm%s %s \e[m\n"  "$COLOR" "[$BATTERY_STATUS%]"  "$GRAPH"
+else
+    printf "%s%s %s" "$COLOR" "[$BATTERY_STATUS%]" "$GRAPH"
+fi

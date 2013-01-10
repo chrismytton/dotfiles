@@ -58,7 +58,7 @@ bind-key S command-prompt "new-window -n %1 'ssh %1'"
 set-option -g status-bg black
 set-option -g status-fg white
 set-option -g status-left-length 30
-set -g status-right "#(battery Discharging; battery Charging) | %e %B %R"
+set -g status-right "#(battery -o tmux)#[fg=default] %e %B %R"
 set-window-option -g window-status-current-bg colour33
 set-window-option -g window-status-current-fg black
 
