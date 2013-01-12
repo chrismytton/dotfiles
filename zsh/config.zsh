@@ -3,7 +3,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Load function in this path. Used for brew completion.
+# Add homebrew completions to function path.
+# brew install zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 export EDITOR='vim -f' # default editor
