@@ -52,3 +52,7 @@ alias sw='simple'
 httpserver() {
   python -m SimpleHTTPServer "$@"
 }
+
+find-replace () {
+  ag -l $1 | xargs sed -i '' -e "s/$1/$2/g"
+}
