@@ -57,6 +57,8 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
   autocorrect = 1
 [credential]
   helper = osxkeychain
+[hub]
+  protocol = https
 GITCONFIG
 else
   echo "existing ~/.gitconfig found, use --force to override" >&2
