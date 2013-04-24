@@ -50,7 +50,7 @@ if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
 [instaweb]
   httpd = webrick
 [push]
-  default = current
+  default = upstream
 [init]
   templatedir = ~/.git_template
 [help]
