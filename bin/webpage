@@ -9,6 +9,7 @@ __END__
   <style>
     body {
       font: 18px sans-serif;
+      line-height: 1.4;
     }
     .container {
       max-width: 600px;
