@@ -1,11 +1,8 @@
-dotfiles
-========
+# dotfiles
 
-My awesome dotfiles, directory structure is ~~stolen from~~ inspired by [@holman's
-dotfiles](https://github.com/holman/dotfiles). Installing and management
-is all done in shell.
+My dotfiles.
 
-## The One Liner
+## Quick start
 
 Paste this into the nearest terminal.
 
@@ -24,7 +21,7 @@ recommend [homebrew](https://github.com/mxcl/homebrew).
 
     brew install git
 
-For linux you will need to get curl, git and zsh from your distro's
+On Linux you will need to install curl, git and zsh from your distro's
 package manager.
 
 ### Automated install
@@ -66,12 +63,7 @@ and `.zsh` files.
 When installing all of the `.symlink` files get linked into the
 `$HOME` directory, all of the `.zsh` files get sourced by `~/.zshrc`.
 
-## Usage
-
-The dotfiles are managed by the `dotfiles(1)` command. For more
-information see `dotfiles help [<command>]`.
-
 ## Author
 
 [Chris Mytton](http://hecticjeff.net/) -
-[@hecticjeff](http://twitter.com/hecticjeff)
+[@hecticjeff](https://twitter.com/hecticjeff)
