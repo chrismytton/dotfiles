@@ -40,8 +40,6 @@ _dotfiles() {
   reply=("${(ps:\n:)completions}")
 }
 
-alias sw='simple'
-
 # Usage: httpserver [<port>]
 httpserver() {
   python -m SimpleHTTPServer "$@"
