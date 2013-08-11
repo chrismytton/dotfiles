@@ -1,14 +1,14 @@
 #!/bin/bash
 set -e
 
-#/ Usage: dotfiles install [<path>]
-#/
-#/ Symlinks the dotfiles into <path> or into $HOME is none is given. If the
-#/ dotfiles are not installed (because the script is running remotely) then
-#/ the script will first clone the dotfiles into <path>.
-#/
-#/ If you decide to install your files at a different 'path' then you will
-#/ also need to change the 'DOTFILES' variable at the top of `~/.zshenv'.
+# Usage: dotfiles-install [<path>]
+#
+# Symlinks the dotfiles into <path> or into $HOME is none is given. If the
+# dotfiles are not installed (because the script is running remotely) then
+# the script will first clone the dotfiles into <path>.
+#
+# If you decide to install your files at a different 'path' then you will
+# also need to change the 'DOTFILES' variable at the top of `~/.zshenv'.
 
 # If the user has provided a path then that is the target, if there is already
 # a $DOTFILES in the environment we use that, otherwise we fallback to
@@ -23,9 +23,6 @@ if [ ! -d "$DOTFILES" ]; then
 
   # Symlink all the dotfiles.
   "$DOTFILES"/bin/dotfiles-ln --verbose "$DOTFILES"
-else
-  # Update all the dotfiles.
-  "$DOTFILES"/bin/dotfiles-update
 fi
 
 # Check if the user is already using zsh, if not then prompt them to

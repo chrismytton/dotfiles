@@ -21,25 +21,6 @@ alias _='sudo'
 # Update and edit dotfiles.
 alias reload!='. ~/.zshrc'
 
-
-# Tab completion for dotfiles.
-# Totally lifted from [rbenv](https://github.com/sstephenson/rbenv).
-compctl -K _dotfiles dotfiles
-
-_dotfiles() {
-  local word words completions
-  read -cA words
-  word="${words[2]}"
-
-  if [ "${#words}" -eq 2 ]; then
-    completions="$(dotfiles commands)"
-  else
-    completions="$(dotfiles completions "${word}")"
-  fi
-
-  reply=("${(ps:\n:)completions}")
-}
-
 # Usage: httpserver [<port>]
 httpserver() {
   python -m SimpleHTTPServer "$@"

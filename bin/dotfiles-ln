@@ -1,21 +1,12 @@
 #!/bin/bash
 set -e
 
-#/ Usage: dotfiles ln [<options>]
-#/
-#/ Options
-#/   --skip-all
-#/   --overwrite-all
-#/   --backup-all
-
-# Provide dotfiles completions
-if [ "$1" = "--complete" ]; then
-  echo --skip-all
-  echo --overwrite-all
-  echo --backup-all
-  echo --verbose
-  exit
-fi
+# Usage: dotfiles-ln [<options>]
+#
+# Options
+#   --skip-all
+#   --overwrite-all
+#   --backup-all
 
 # global flags for installing dotfiles
 skip_all=false
