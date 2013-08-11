@@ -2,7 +2,6 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias -- -='cd -'
 
 # Shortcuts for long directory listing.
 alias ll='ls -l'
