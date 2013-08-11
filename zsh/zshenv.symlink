@@ -10,6 +10,3 @@ fi
 
 # Set the default manpath.
 manpath=(/usr/share/man /usr/local/share/man)
-
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
