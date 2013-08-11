@@ -4,22 +4,27 @@ puts DATA.read.gsub('{{content}}', ARGF.read)
 
 __END__
 <!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      font: 18px sans-serif;
-      line-height: 1.4;
-    }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    {{content}}
-  </div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <style>
+      body {
+        font: 18px sans-serif;
+        line-height: 1.4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {{content}}
+    </div>
+  </body>
 </html>
