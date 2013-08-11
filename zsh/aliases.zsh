@@ -17,7 +17,7 @@ take() {
 # Shorter way to `sudo` something.
 alias _='sudo'
 
-# Update and edit dotfiles.
+# Reload dotfiles.
 alias reload!='. ~/.zshrc'
 
 # Usage: httpserver [<port>]
