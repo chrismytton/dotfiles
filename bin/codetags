@@ -2,4 +2,4 @@
 
 set -e
 
-git grep --line-number 'TODO\|FIXME\|XXX\|NOTE' $@
+git grep -I --line-number 'TODO\|FIXME\|XXX\|NOTE' $@
