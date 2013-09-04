@@ -1,6 +1,6 @@
 if command -v hub &>/dev/null; then
   # hub
-  function git(){hub "$@"}
+  eval "$(hub alias -s)"
 fi
 
 # git
