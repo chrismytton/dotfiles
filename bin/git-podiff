@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+git diff --color $@ | grep -v '^ ' | grep -v @@ | grep -v '#:' | less -FRSX
