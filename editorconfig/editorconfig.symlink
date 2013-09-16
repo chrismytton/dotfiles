@@ -27,5 +27,5 @@ indent_size = 4
 [*.scss]
 indent_size = 2
 
-[*.{pl,pm}]
+[*.{pl,pm,t}]
 indent_size = 4
