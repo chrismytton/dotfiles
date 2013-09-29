@@ -1,9 +1,3 @@
-if command -v hub &>/dev/null; then
-  # hub
-  function git(){hub "$@"}
-fi
-
-# git
 alias g=git
 alias gst='git status -sb'
 alias gp='git push'
@@ -23,3 +17,6 @@ alias gl='git l'
 alias gpl='git pl'
 alias gr='git remote -v'
 alias gfp='git fetch --all --prune'
+
+# hub
+if which hub > /dev/null; then function git(){hub "$@"} fi

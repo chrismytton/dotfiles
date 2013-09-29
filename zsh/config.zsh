@@ -31,4 +31,3 @@ setopt SHARE_HISTORY # Share history between tabs.
 # Search history when you have typed a command and press up.
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
-

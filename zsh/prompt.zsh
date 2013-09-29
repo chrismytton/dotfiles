@@ -20,4 +20,3 @@ PROMPT='%~$(git_prompt_info)%(?..%{$fg[red]%})%#%{$reset_color%} '
 if [ "$SSH_CONNECTION" ]; then
   PROMPT="%n@%m:$PROMPT"
 fi
-

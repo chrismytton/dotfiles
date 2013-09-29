@@ -5,6 +5,4 @@ if [ -d "/usr/local/share/npm/bin" ]; then
   path=(/usr/local/share/npm/bin $path)
 fi
 
-if command -v npm &>/dev/null; then
-  . <(npm completion)
-fi
+if which npm > /dev/null; then . <(npm completion); fi
