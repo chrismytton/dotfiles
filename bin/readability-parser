@@ -5,7 +5,7 @@ set -e
 echoerr() { echo "$@" >&2; }
 
 if [ ! "${READABILITY_PARSER_API_KEY}" ]; then
-  echoerr "webpage-content: environment variable missing: READABILITY_PARSER_API_KEY"
+  echoerr "readability-parser: environment variable missing: READABILITY_PARSER_API_KEY"
   echoerr
   echoerr "Please export READABILITY_PARSER_API_KEY in your ~/.profile or similar"
   echoerr "Get a Parser API key from https://www.readability.com/account/api"
@@ -13,7 +13,7 @@ if [ ! "${READABILITY_PARSER_API_KEY}" ]; then
 fi
 
 if [ "$#" -eq "0" ]; then
-  echoerr "Usage: webpage-content <url> [<filter>]"
+  echoerr "Usage: readability-parser <url> [<filter>]"
   echoerr "To use a <filter> you must have jq(1) installed"
   exit
 fi
