@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+if [ "$#" -eq "0" ]; then
+  echo "Usage: webpage-content <url> [<filter>]"
+  echo "To use a <filter> you must have jq(1) installed"
+  exit
+fi
+
+uri="https://readability.com/api/content/v1/parser?token=${READABILITY_PARSER_API_KEY}&url=$1"
+response=$(curl --fail --silent --show-error --location "$uri")
+
+if [ "$2" ]; then
+  echo "$response" | jq --raw-output "$2"
+else
+  echo "$response"
+fi
