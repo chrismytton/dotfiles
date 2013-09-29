@@ -40,6 +40,7 @@ ra = !git r --all
 l = "!source ~/.githelpers && pretty_git_log"
 la = !git l --all
 podiff = !git podiff
+prune-merged-branches = !git prune-merged-branches
 
 [core]
 excludesfile = ~/.gitignore
