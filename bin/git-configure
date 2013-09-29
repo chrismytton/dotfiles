@@ -1,5 +1,5 @@
 #!/bin/sh
-# Usage: git-create-config [--force]
+# Usage: git-configure [--force]
 set -e
 
 if [ ! -f "$HOME/.gitconfig" -o "$1" = "--force" ]; then
