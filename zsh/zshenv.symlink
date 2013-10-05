@@ -1,4 +1,4 @@
-export DOTFILES="$HOME/.dotfiles"
+DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 
 # Reset the path to include the sane defaults where system binaries live.
 path=(/usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin)
