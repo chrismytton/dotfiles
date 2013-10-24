@@ -22,6 +22,9 @@ bind-key a send-prefix
 # Start window numbering at 1.
 set -g base-index 1
 
+# More scrollback
+set-option -g history-limit 5000
+
 # More intuitive window splitting.
 unbind-key %
 bind-key | split-window -h
