@@ -91,6 +91,6 @@ fi
 
 # actually delete the branches via push if remote or via branch -D if local
 if [ -n "$remote" ]
-then git push origin $(echo "$branches" | sed 's/^../:/')
+then git push "$remote" $(echo "$branches" | sed 's/^../:/')
 else git branch -D $(echo "$branches" | cut -c2-)
 fi
