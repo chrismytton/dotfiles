@@ -15,7 +15,7 @@ export CLICOLOR=true # Make commands like ls use color.
 # See https://wiki.archlinux.org/index.php/Zsh#Command_Completion
 zstyle ':completion:*' menu select
 
-# Case in-sensitive comletion.
+# Case insensitive completion.
 # Take from @sapporo's answer on
 # http://hintsforums.macworld.com/archive/index.php/t-6493.html.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
