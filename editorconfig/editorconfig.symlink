@@ -25,7 +25,7 @@ indent_style = tabs
 indent_size = 4
 
 [*.scss]
-indent_size = 2
+indent_size = 4
 
 [*.{pl,pm,t}]
 indent_size = 4
