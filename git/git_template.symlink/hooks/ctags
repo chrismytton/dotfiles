@@ -1,3 +1,4 @@
 #!/bin/sh
+killall ctags 2> /dev/null
 rm -f .git/tags
 ctags --tag-relative -Rf.git/tags --exclude=.git --languages=-javascript,sql
