@@ -27,8 +27,8 @@ set-option -g history-limit 5000
 
 # More intuitive window splitting.
 unbind-key %
-bind-key | split-window -h
-bind-key - split-window -v
+bind-key | split-window -h -c "#{pane_current_path}"
+bind-key - split-window -v -c "#{pane_current_path}"
 
 # Don't wait after pressing escape.
 set-option -g escape-time 0
