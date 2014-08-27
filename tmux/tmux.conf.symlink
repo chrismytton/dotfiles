@@ -53,12 +53,6 @@ bind-key C-a last-window
 
 bind-key c new-window -c "#{pane_current_path}"
 
-# Open a manpage in a split.
-bind-key / command-prompt "split-window 'exec man %%'"
-
-# Open an ssh session in a new window.
-bind-key S command-prompt "new-window -n %1 'ssh %1'"
-
 # Style the status bar.
 set-option -g status-bg black
 set-option -g status-fg white
