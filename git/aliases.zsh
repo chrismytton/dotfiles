@@ -17,6 +17,7 @@ alias gl='git l'
 alias gpl='git pl'
 alias gr='git remote -v'
 alias gfp='git fetch --all --prune'
+alias gg='git grep'
 
 # hub
 if which hub > /dev/null; then function git(){hub "$@"} fi
