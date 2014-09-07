@@ -1,8 +1,7 @@
-#!/usr/bin/env ruby
+#!/bin/sh
+set -e
 
-puts DATA.read.gsub('{{content}}', ARGF.read)
-
-__END__
+cat <<TEXT
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +23,8 @@ __END__
   </head>
   <body>
     <div class="container">
-      {{content}}
+      `cat`
     </div>
   </body>
 </html>
+TEXT
