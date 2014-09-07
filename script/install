@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+cd "$(dirname "$0")/.."
+DOTFILES_DIR=$(pwd)
+
+for source in **/*.symlink; do
+  target="$HOME/.$(basename "$source" .symlink)"
+  ln -sv "$DOTFILES_DIR/$source" "$target"
+done

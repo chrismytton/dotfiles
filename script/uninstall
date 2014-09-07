@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+cd "$(dirname "$0")/.."
+DOTFILES_DIR=$(pwd)
+
+for source in **/*.symlink; do
+  target="$HOME/.$(basename "$source" .symlink)"
+  if [ -L "$target" ]; then
+    if readlink "$target" | grep -q "$DOTFILES_DIR"; then
+      rm -v "$target"
+    fi
+  fi
+done
