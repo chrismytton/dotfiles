@@ -12,19 +12,14 @@ cat <<TEXT
     <title></title>
     <style>
       body {
-        font: 18px sans-serif;
-        line-height: 1.4;
-      }
-      .container {
         max-width: 600px;
         margin: 0 auto;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      `cat`
-    </div>
+    `cat`
   </body>
 </html>
 TEXT
