@@ -3,7 +3,6 @@
 Thumbs.db
 tmp/**/*
 .localized
-.vagrant
 .zfproject.xml
 nbproject
 .sass-cache/
