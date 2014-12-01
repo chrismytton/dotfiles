@@ -1,0 +1,37 @@
+#!/bin/bash
+# Convert a url to a kindle mobi file
+#
+# Requires kindlegen(1) to be installed and in the PATH
+
+set -eo pipefail
+[[ "$TRACE" ]] && set -x
+
+create_mobi() {
+  local title="$1"
+  local content="$2"
+  local out="$3"
+  local tmpfile="url-to-mobi.tmp.html"
+  echo "$content" | TITLE="$title" webpage > "$tmpfile"
+  kindlegen "$tmpfile" -o "$out" || true
+  echo "Created $out for $title" >&2
+  rm "$tmpfile"
+}
+
+main() {
+  local url="$1"
+  local out="${2:-out.mobi}"
+
+  if [[ ! "$url" ]]; then
+    echo "Usage: $0 <url> [<outfile>]" >&2
+    exit 1
+  fi
+
+  local response_json="$(mktemp -t response.json)"
+  readability-parser "$url" > "$response_json"
+  local title="$(jq --raw-output '.title' "$response_json")"
+  local content="$(jq --raw-output '.content' "$response_json")"
+  rm "$response_json"
+  create_mobi "$title" "$content" "$out"
+}
+
+main "$@"
