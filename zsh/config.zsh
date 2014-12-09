@@ -5,7 +5,7 @@ SAVEHIST=10000
 
 # Add homebrew completions to function path.
 # brew install zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 export EDITOR='vim -f' # default editor
 
