@@ -4,7 +4,7 @@ My dotfiles.
 
 ## Install
 
-    git clone https://github.com/hecticjeff/dotfiles ~/.dotfiles
+    git clone https://github.com/chrismytton/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     ./script/install
 
@@ -30,5 +30,5 @@ When installing all of the `.symlink` files get linked into the
 
 ## Author
 
-[Chris Mytton](http://hecticjeff.net/) -
-[@hecticjeff](https://twitter.com/hecticjeff)
+[Chris Mytton](https://www.chrismytton.uk/) -
+[@chrismytton](https://twitter.com/chrismytton)
