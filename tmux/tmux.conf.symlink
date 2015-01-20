@@ -33,9 +33,6 @@ bind-key - split-window -v -c "#{pane_current_path}"
 # Don't wait after pressing escape.
 set-option -g escape-time 0
 
-# Mouse integration.
-set-option -g mode-mouse on
-
 # Force a reload of the config file.
 bind-key R source-file ~/.tmux.conf \; display-message "source-file done"
 
