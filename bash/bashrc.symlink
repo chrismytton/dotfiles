@@ -73,9 +73,7 @@ take() {
   mkdir "$1" && cd "$1"
 }
 
-if [ -f /usr/local/share/chruby/chruby.sh ]; then
-  source /usr/local/share/chruby/chruby.sh
-fi
+[[ -f /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
 
 
 # vim: syntax=sh
