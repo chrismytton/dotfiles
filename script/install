@@ -6,5 +6,7 @@ DOTFILES_DIR=$(pwd)
 
 for source in **/*.symlink; do
   target="$HOME/.$(basename "$source" .symlink)"
-  ln -sv "$DOTFILES_DIR/$source" "$target"
+  if [[ ! -L "$target" ]]; then
+    ln -sv "$DOTFILES_DIR/$source" "$target"
+  fi
 done
