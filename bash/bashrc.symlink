@@ -12,8 +12,11 @@ PS1='\w$(__git_ps1 "(%s)")\$ '
 # Dotfiles bin
 PATH="$HOME/.dotfiles/bin:$PATH"
 
-export CLICOLOR=1
-export EDITOR='vim -f'
+# Enable color for ls(1) etc.
+CLICOLOR=1
+
+# Set default editor for git commits etc.
+EDITOR='vim -f'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -30,65 +33,13 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# git
-alias g=git
-alias gst='git status -sb'
-alias gp='git push'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias ga='git add'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gl='git l'
-alias gpl='git pl'
-alias gr='git remote -v'
-alias gfp='git fetch --all --prune'
-alias gg='git grep'
-alias gx=gitx
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+  source /usr/local/share/chruby/chruby.sh
+fi
 
-# Make completion work for git aliases
-__git_complete gp _git_push
-__git_complete gd _git_diff
-__git_complete gdc _git_diff
-__git_complete ga _git_add
-__git_complete gc _git_commit
-__git_complete gca _git_commit
-__git_complete gco _git_checkout
-__git_complete gb _git_branch
-__git_complete gba _git_branch
-__git_complete gr _git_remote
-__git_complete gfp _git_fetch
-__git_complete gg _git_grep
-
-# cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-# ls
-alias ll='ls -l'
-alias l='ls -laF'
-
-# vim
-alias v='vim'
-
-# bundle
-alias be="bundle exec"
-alias bi="bundle install"
-alias bu="bundle update"
-
-# other
-alias urlencode='ruby -r uri -e "puts URI.encode_www_form_component(ARGV[0])"'
-alias urldecode='ruby -r uri -e "puts URI.decode_www_form_component(ARGV[0])"'
-
-take() {
-  mkdir "$1" && cd "$1"
-}
-
-[[ -f /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
 
 # vim: syntax=sh
