@@ -16,7 +16,7 @@ PATH="$HOME/.dotfiles/bin:$PATH"
 CLICOLOR=1
 
 # Set default editor for git commits etc.
-EDITOR='vim -f'
+export EDITOR='vim -f'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
