@@ -56,5 +56,9 @@ take() {
   mkdir "$1" && cd "$1"
 }
 
+pingrouter() {
+  ping $(netstat -rn | grep default | awk -F ' ' '{print $2}')
+}
+
 
 # vim: syntax=sh
