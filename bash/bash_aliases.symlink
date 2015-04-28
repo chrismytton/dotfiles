@@ -18,7 +18,7 @@ alias gg='git grep'
 alias gx=gitx
 
 # Make completion work for git aliases
-if [ command -v __git_complete > /dev/null ]; then
+if command -v __git_complete > /dev/null; then
   __git_complete gp _git_push
   __git_complete gd _git_diff
   __git_complete gdc _git_diff
