@@ -15,6 +15,8 @@ if [ -n "$SSH_CLIENT" ]; then
   PS1="\u@\h:$PS1"
 fi
 
+PATH="$PATH:/usr/local/sbin"
+
 # Dotfiles bin
 PATH="$HOME/.dotfiles/bin:$PATH"
 
