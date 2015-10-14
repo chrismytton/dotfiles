@@ -1,0 +1,3 @@
+#!/bin/bash
+# From https://github.com/garethrees/notify-osx/blob/master/notify
+/usr/bin/osascript -e "display notification \"$*\" with title \"Notify\""
