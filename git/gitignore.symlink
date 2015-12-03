@@ -48,5 +48,7 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+
+# Other
 .editorconfig
 .env
