@@ -59,3 +59,7 @@ fi
 
 export NVM_DIR="/Users/chris/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -f /usr/local/share/liquidprompt ]; then
+  . /usr/local/share/liquidprompt
+fi
