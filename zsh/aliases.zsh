@@ -28,13 +28,6 @@ find-replace () {
 alias v='vim'
 alias m='mvim'
 
-# Bundler
-alias be="bundle exec"
-alias bi="bundle install"
-alias bl="bundle list"
-alias bu="bundle update"
-alias bp="bundle package"
-
 # From http://coderwall.com/p/7wvx0g
 pretty() { pygmentize -f terminal "$1" | less -R }
 
