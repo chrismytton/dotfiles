@@ -1,5 +1,13 @@
+# Path to dotfiles
+export ZSH=$HOME/.dotfiles
+
 # Load all the zsh files in the dotfiles.
 for module ($ZSH/**/*.zsh) source "$module"
+
+# If there is a bin directory in $ZSH then add that to the path.
+if [ -d "$ZSH/bin" ]; then
+  path=($ZSH/bin $path)
+fi
 
 # Completion
 autoload compinit && compinit
