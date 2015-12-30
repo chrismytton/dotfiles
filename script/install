@@ -2,11 +2,11 @@
 set -e
 
 cd "$(dirname "$0")/.."
-DOTFILES_DIR=$(pwd)
+ZSH=$(pwd)
 
 for source in **/*.symlink; do
   target="$HOME/.$(basename "$source" .symlink)"
   if [[ ! -L "$target" ]]; then
-    ln -sv "$DOTFILES_DIR/$source" "$target"
+    ln -sv "$ZSH/$source" "$target"
   fi
 done
