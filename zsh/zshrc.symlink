@@ -1,5 +1,5 @@
 # Path to dotfiles
-export ZSH=$HOME/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 # If there is a .bin directory in $HOME then add that to the path.
 if [ -d "$HOME/.bin" ]; then
@@ -18,6 +18,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
 
 # Load all the zsh files in the dotfiles.
-for module ($ZSH/**/*.zsh) source "$module"
+for module ($DOTFILES/**/*.zsh) source "$module"
 
 antigen apply
