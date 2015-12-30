@@ -1,11 +1,3 @@
-# Path to dotfiles
-export DOTFILES=$HOME/.dotfiles
-
-# If there is a .bin directory in $HOME then add that to the path.
-if [ -d "$HOME/.bin" ]; then
-  path=($HOME/.bin $path)
-fi
-
 source /usr/local/share/antigen.zsh
 
 antigen use oh-my-zsh
@@ -17,7 +9,15 @@ antigen bundle github
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
 
-# Load all the zsh files in the dotfiles.
-for module ($DOTFILES/**/*.zsh) source "$module"
+# Add homebrew completions to function path.
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 antigen apply
+
+export EDITOR='vim -f'
+alias v='vim'
+
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+fi
