@@ -1,0 +1,10 @@
+# Reset the path to include the sane defaults where system binaries live.
+path=(/usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin)
+
+# If there is a .bin directory in $HOME then add that to the path.
+if [ -d "$HOME/.bin" ]; then
+  path=($HOME/.bin $path)
+fi
+
+# Set the default manpath.
+manpath=(/usr/share/man /usr/local/share/man)

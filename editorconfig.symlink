@@ -1,0 +1,34 @@
+; See http://editorconfig.org/
+
+; This is the top-most .editorconfig file.
+root = true
+
+; Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+[*.rb]
+indent_style = space
+indent_size = 2
+
+[*.go]
+indent_style = tabs
+indent_size = 4
+
+[*.css]
+indent_size = 4
+
+[*.scss]
+indent_size = 4
+
+[*.{pl,pm,t}]
+indent_size = 4

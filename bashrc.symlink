@@ -1,0 +1,65 @@
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+elif [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+# PS1
+GIT_PS1_SHOWDIRTYSTATE=true \
+GIT_PS1_SHOWUNTRACKEDFILES=true \
+GIT_PS1_SHOWSTASHSTATE=true \
+GIT_PS1_SHOWUPSTREAM=true \
+PS1='\w$(__git_ps1 "(%s)")\$ '
+
+if [ -n "$SSH_CLIENT" ]; then
+  PS1="\u@\h:$PS1"
+fi
+
+PATH="$PATH:/usr/local/sbin"
+
+# Dotfiles bin
+PATH="$HOME/.dotfiles/bin:$PATH"
+
+# Enable color for ls(1) etc.
+export CLICOLOR=1
+
+# Set default editor for git commits etc.
+export EDITOR='vim -f'
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# Keep history in sync across tabs
+export PROMPT_COMMAND="history -a; history -n"
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+  source /usr/local/share/chruby/chruby.sh
+  chruby ruby-2.2.3
+fi
+
+
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+
+# vim: syntax=sh
+
+export NVM_DIR="/Users/chris/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -f /usr/local/share/liquidprompt ]; then
+  . /usr/local/share/liquidprompt
+fi
