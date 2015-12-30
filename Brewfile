@@ -1,6 +1,4 @@
 tap 'homebrew/command-not-found'
 brew 'antigen'
 brew 'bash-completion'
-brew 'liquidprompt'
 brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'

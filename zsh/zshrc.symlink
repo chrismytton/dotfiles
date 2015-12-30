@@ -9,5 +9,12 @@ if [ -d "$ZSH/bin" ]; then
   path=($ZSH/bin $path)
 fi
 
+source /usr/local/share/antigen.zsh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle nojhan/liquidprompt
+
+antigen apply
+
 # Completion
 autoload compinit && compinit
