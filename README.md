@@ -17,17 +17,7 @@ Finally you need to change your shell to zsh.
 
 ## How does it work?
 
-Each top level directory (except for `bin/`) is named after the
-command that it augments with functionality.
-
-There are two types of files that go in these directories, `.symlink`
-and `.zsh` files.
-
-* `.symlink` - Generally used for "rc" files (like .zshrc).
-* `.zsh` - adds functionality to zsh.
-
-When installing all of the `.symlink` files get linked into the
-`$HOME` directory, all of the `.zsh` files get sourced by `~/.zshrc`.
+There are a bunch of `.symlink` files in the repo. When `./script/install` gets run they are symlinked into the users' home directory.
 
 ## Author
 
