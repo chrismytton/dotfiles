@@ -6,7 +6,6 @@ My dotfiles.
 
     git clone https://github.com/chrismytton/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    brew bundle
     ./script/install
 
 ### Post install

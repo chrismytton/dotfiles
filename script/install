@@ -4,6 +4,8 @@ set -e
 cd "$(dirname "$0")/.."
 ZSH=$(pwd)
 
+brew bundle
+
 if [[ ! -d "$HOME/.bin" ]]; then
   git clone https://github.com/chrismytton/bin.git "$HOME/.bin"
 fi
