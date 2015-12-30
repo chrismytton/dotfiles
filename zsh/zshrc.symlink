@@ -1,12 +1,9 @@
 # Path to dotfiles
 export ZSH=$HOME/.dotfiles
 
-# Load all the zsh files in the dotfiles.
-for module ($ZSH/**/*.zsh) source "$module"
-
-# If there is a bin directory in $ZSH then add that to the path.
-if [ -d "$ZSH/bin" ]; then
-  path=($ZSH/bin $path)
+# If there is a .bin directory in $HOME then add that to the path.
+if [ -d "$HOME/.bin" ]; then
+  path=($HOME/.bin $path)
 fi
 
 source /usr/local/share/antigen.zsh
@@ -19,5 +16,8 @@ antigen bundle git
 antigen bundle github
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
+
+# Load all the zsh files in the dotfiles.
+for module ($ZSH/**/*.zsh) source "$module"
 
 antigen apply

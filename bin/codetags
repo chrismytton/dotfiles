@@ -1,5 +1,0 @@
-#!/bin/bash
-
-set -e
-
-git grep -I --line-number 'TODO\|FIXME\|XXX\|NOTE' "$@"
