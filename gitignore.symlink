@@ -52,3 +52,4 @@ DerivedData
 # Other
 .editorconfig
 .env
+.ruby-version
