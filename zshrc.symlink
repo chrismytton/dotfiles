@@ -17,7 +17,4 @@ antigen apply
 export EDITOR='vim -f'
 alias v='vim'
 
-if [ -f /usr/local/share/chruby/chruby.sh ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-fi
+eval "$(rbenv init -)"
