@@ -1,0 +1,131 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Defaults everyone can agree on
+Plugin 'tpope/vim-sensible'
+
+" File navigation and git integration.
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+
+" Editing helpers.
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'sickill/vim-pasta'
+Plugin 'ervandew/supertab'
+
+" Language packs.
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-markdown'
+Plugin 'groenewege/vim-less'
+Plugin 'fatih/vim-go'
+Plugin 'nono/vim-handlebars'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'vim-perl/vim-perl'
+Plugin 'honza/dockerfile.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'wting/rust.vim'
+Plugin 'jplaut/vim-arduino-ino'
+
+" Editor configuration
+Plugin 'editorconfig/editorconfig-vim'
+
+" All Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+set clipboard=unnamed           " fix clipboard access in terminal
+
+" Use space as the leader key.
+let mapleader=" "
+
+"" Whitespace
+set list                        " show listchars
+
+"" Searching
+set hlsearch                    " highlight matches
+set ignorecase                  " searches are case insensitive...
+
+"" zsh like command mode completion
+set wildmode=longest,list:longest,full
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  \| exe "normal! g`\"" | endif
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+""""""
+"""""" Key mappings
+""""""
+
+" Cleanup trailing whitespace and tabs with leader-w
+nnoremap <silent> <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>:echo "Whitespace tidied!"<CR>
+
+" Jump between buffers
+nnoremap <leader><leader> <C-^>
+
+" Map Tab to jump between brackets, quotes etc.
+nnoremap <TAB> %
+
+" Quickly jump in and out of paste mode.
+nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+
+" CtrlP custom ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|public/uploads$\|venv$\|node_modules$',
+  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+  \ }
+
+" Map W and Q to their smaller counterparts.
+command! W :w
+command! Q :q
+
+" Skip the vim intro screen
+set shortmess+=I
+
+let g:markdown_fenced_languages = ['ruby', 'javascript', 'html']
+
+" Provide a home for transient directories
+let s:dir = has('win32') ? '$APPDATA/Vim' : match(system('uname'), "Darwin") > -1 ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
+if isdirectory(expand(s:dir))
+  if &directory =~# '^\.,'
+    let &directory = expand(s:dir) . '/swap//,' . &directory
+  endif
+  if &backupdir =~# '^\.,'
+    let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
+  endif
+  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
+    let &undodir = expand(s:dir) . '/undo//,' . &undodir
+  endif
+endif
+if exists('+undofile')
+  set undofile
+endif
