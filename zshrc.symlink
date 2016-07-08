@@ -10,7 +10,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
 
 # Add homebrew completions to function path.
-fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 antigen apply
 
