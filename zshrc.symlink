@@ -1,3 +1,7 @@
+if [ -d "$HOME/.bin" ]; then
+  path=($HOME/.bin $path)
+fi
+
 source /usr/local/share/antigen.zsh
 
 antigen use oh-my-zsh
