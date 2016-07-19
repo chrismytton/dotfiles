@@ -15,10 +15,7 @@ antigen apply
 export EDITOR='vim -f'
 alias v='vim'
 
-rbenv() {
-  eval "$(command rbenv init -)"
-  rbenv "$@"
-}
+eval "$(rbenv init -)"
 
 pyenv() {
   eval "$(command pyenv init -)"
