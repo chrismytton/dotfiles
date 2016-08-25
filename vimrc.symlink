@@ -129,3 +129,6 @@ endif
 if exists('+undofile')
   set undofile
 endif
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
