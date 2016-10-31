@@ -10,7 +10,7 @@ plugins=(
   /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   /usr/local/share/liquidprompt
   /usr/local/etc/profile.d/z.sh
-  $HOME/.zsh/**/*.zsh
+  $HOME/.dotfiles/**/*.zsh
 )
 
 for plugin in $plugins; do
