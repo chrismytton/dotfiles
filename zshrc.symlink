@@ -7,10 +7,10 @@ export EDITOR='vim -f'
 eval "$(rbenv init - --no-rehash)"
 
 plugins=(
-  $HOME/.dotfiles/**/*.zsh
   /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   /usr/local/share/liquidprompt
   /usr/local/etc/profile.d/z.sh
+  $HOME/.zsh/**/*.zsh
 )
 
 for plugin in $plugins; do
@@ -18,4 +18,3 @@ for plugin in $plugins; do
     . "$plugin"
   fi
 done
-
