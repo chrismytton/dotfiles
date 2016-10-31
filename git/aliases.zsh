@@ -1,8 +1,8 @@
 alias g=git
+alias git=hub
 alias gst='git status -sb'
 alias gp='git push'
 alias gpo='gp origin master'
-alias gps='gp stage'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdca='git diff --cached'
@@ -14,12 +14,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gx=gitx
-alias gl='git l'
-alias gpl='git pl'
 alias gr='git remote -v'
 alias gfp='git fetch --all --prune'
 alias gg='git grep'
 alias gmom='git merge origin master'
-
-# hub
-if which hub > /dev/null; then function git(){hub "$@"} fi
