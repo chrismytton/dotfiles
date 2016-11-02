@@ -16,5 +16,7 @@ alias gba='git branch -a'
 alias gx=gitx
 alias gr='git remote -v'
 alias gfp='git fetch --all --prune'
+alias gfa='git fetch --all --prune'
 alias gg='git grep'
 alias gmom='git merge origin master'
+alias gl='git pull'
