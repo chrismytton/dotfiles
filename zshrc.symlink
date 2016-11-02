@@ -1,11 +1,4 @@
-if [ -d "$HOME/.bin" ]; then
-  path=($HOME/.bin $path)
-fi
-
-export EDITOR='vim -f'
-
-eval "$(rbenv init - --no-rehash)"
-
+# Plugins
 plugins=(
   /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   /usr/local/share/liquidprompt
@@ -18,3 +11,18 @@ for plugin in $plugins; do
     . "$plugin"
   fi
 done
+
+# Paths
+if [ -d "$HOME/.bin" ]; then
+  path=($HOME/.bin $path)
+fi
+
+# Exports
+export EDITOR='vim -f'
+
+# Aliases
+alias v='vim'
+alias l='ls -laFh'
+
+# Ruby
+eval "$(rbenv init - --no-rehash)"
