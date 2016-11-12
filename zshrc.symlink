@@ -1,21 +1,3 @@
-plugins=(
-  /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  /usr/local/share/liquidprompt
-  /usr/local/etc/profile.d/z.sh
-  $HOME/.travis/travis.sh
-)
-
-for plugin in $plugins; do
-  if [ -f "$plugin"  ]; then
-    . "$plugin"
-  fi
-done
-
-# aliases
-alias ls='ls -G'
-alias l='ls -laFh'
-alias tree='tree -C'
-
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -39,7 +21,10 @@ if [ -d "$HOME/.bin" ]; then
   path=($HOME/.bin $path)
 fi
 
-source_all() { [ -d $HOME/$1 ] && for file ($HOME/$1/**/*.zsh) source $file }
+# aliases
+alias ls='ls -G'
+alias l='ls -laFh'
+alias tree='tree -C'
 
-source_all .dotfiles
-source_all .zsh
+# Put custom zsh config into *.zsh file in the ~/.zsh directory
+[ -d $HOME/.zsh ] && for file ($HOME/.zsh/**/*.zsh) source $file
