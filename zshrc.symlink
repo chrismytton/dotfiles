@@ -4,6 +4,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload compinit
 compinit
 
+zstyle ':completion:*' menu select
+
 # history
 HISTFILE="${HOME}/.history/$(date -u +%Y)"
 HISTSIZE=100000
