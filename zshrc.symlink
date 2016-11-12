@@ -11,10 +11,7 @@ for plugin in $plugins; do
   fi
 done
 
-source_all() {
-  local dir=$1
-  [ -d $HOME/$dir ] && for file ($HOME/$dir/**/*.zsh) source $file
-}
+source_all() { [ -d $HOME/$1 ] && for file ($HOME/$1/**/*.zsh) source $file }
 
 source_all .dotfiles
 source_all .zsh
