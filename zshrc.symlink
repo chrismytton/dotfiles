@@ -3,7 +3,6 @@ plugins=(
   /usr/local/share/liquidprompt
   /usr/local/etc/profile.d/z.sh
   $HOME/.travis/travis.sh
-  $HOME/.dotfiles/**/*.zsh
 )
 
 for plugin in $plugins; do
@@ -11,3 +10,11 @@ for plugin in $plugins; do
     . "$plugin"
   fi
 done
+
+source_all() {
+  local dir=$1
+  [ -d $HOME/$dir ] && for file ($HOME/$dir/**/*.zsh) source $file
+}
+
+source_all .dotfiles
+source_all .zsh
