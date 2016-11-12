@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-tap 'homebrew/bundle'
-tap 'homebrew/services'
-
 brew 'ansible'
 brew 'cloc'
 brew 'coreutils'
@@ -43,9 +40,6 @@ brew 'wget'
 brew 'youtube-dl'
 brew 'zsh-syntax-highlighting'
 brew 'z'
-
-tap 'caskroom/cask'
-cask_args appdir: '/Applications'
 
 cask '1password'
 cask 'alfred'
