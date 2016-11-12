@@ -11,6 +11,34 @@ for plugin in $plugins; do
   fi
 done
 
+# aliases
+alias ls='ls -G'
+alias l='ls -laFh'
+alias tree='tree -C'
+
+# completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+autoload compinit
+compinit
+
+# history
+HISTFILE="${HOME}/.history/$(date -u +%Y)"
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt INC_APPEND_HISTORY_TIME
+
+# paths
+if [ -d "$HOME/.bin" ]; then
+  path=($HOME/.bin $path)
+fi
+
 source_all() { [ -d $HOME/$1 ] && for file ($HOME/$1/**/*.zsh) source $file }
 
 source_all .dotfiles
