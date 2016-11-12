@@ -1,0 +1,2 @@
+export EDITOR='vim -f'
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1

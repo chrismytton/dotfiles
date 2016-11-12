@@ -1,8 +1,8 @@
-# Plugins
 plugins=(
   /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   /usr/local/share/liquidprompt
   /usr/local/etc/profile.d/z.sh
+  $HOME/.travis/travis.sh
   $HOME/.dotfiles/**/*.zsh
 )
 
@@ -11,18 +11,3 @@ for plugin in $plugins; do
     . "$plugin"
   fi
 done
-
-# Paths
-if [ -d "$HOME/.bin" ]; then
-  path=($HOME/.bin $path)
-fi
-
-# Exports
-export EDITOR='vim -f'
-
-# Aliases
-alias v='vim'
-alias l='ls -laFh'
-
-# Ruby
-eval "$(rbenv init - --no-rehash)"

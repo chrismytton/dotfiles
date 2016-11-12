@@ -1,0 +1,3 @@
+dotfiles() {
+  (cd ~/.dotfiles; vim)
+}
