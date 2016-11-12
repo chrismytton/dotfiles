@@ -1,8 +1,5 @@
-alias v='vim'
 alias ls='ls -G'
 alias l='ls -laFh'
+
 alias tz='systemsetup -settimezone'
 alias fixcamera='killall VDCAssistant'
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
