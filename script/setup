@@ -4,10 +4,6 @@ set -e
 cd "$(dirname "$0")/.."
 ZSH=$(pwd)
 
-if [[ ! -d "$HOME/.bin" ]]; then
-  git clone https://github.com/chrismytton/bin.git "$HOME/.bin"
-fi
-
 for source in **/*.symlink; do
   target="$HOME/.$(basename "$source" .symlink)"
   if [[ ! -L "$target" ]]; then
