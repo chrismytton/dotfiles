@@ -23,10 +23,5 @@ if [ -d "$HOME/.bin" ]; then
   path=($HOME/.bin $path)
 fi
 
-# aliases
-alias ls='ls -G'
-alias l='ls -laFh'
-alias tree='tree -C'
-
 # Put custom zsh config into *.zsh file in the ~/.zsh directory
 [ -d $HOME/.zsh ] && for file ($HOME/.zsh/**/*.zsh) source $file
