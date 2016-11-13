@@ -3,6 +3,7 @@
 brew 'ansible'
 brew 'cloc'
 brew 'coreutils'
+brew 'diff-so-fancy'
 brew 'ffmpeg'
 brew 'gifify'
 brew 'gifsicle'
