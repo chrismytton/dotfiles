@@ -18,3 +18,5 @@ if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
 fi
 
 vim +PluginInstall +PluginClean! +qall
+
+git config user.email &> /dev/null || echo "Please run 'git config --file ~/.gitconfig.local user.email user@example.com' to set git email"
