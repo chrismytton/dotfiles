@@ -16,7 +16,7 @@ Finally you need to change your shell to zsh.
 
 ## How does it work?
 
-There are a bunch of `.symlink` files in the repo. When `./script/setup` gets run they are symlinked into the users' home directory. There are also lots of `.zsh` files, which are sourced from `~/.zshrc`.
+There are a bunch of `.symlink` files in the repo. When `./script/setup` gets run they are symlinked into the users' home directory.
 
 ## Author
 
