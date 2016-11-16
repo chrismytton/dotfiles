@@ -13,6 +13,7 @@
 	autosquash = true
 [alias]
 	lg = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	since-yesterday = lg --all --since=yesterday
 [diff "ansible-vault"]
 	textconv = ansible-vault view
 	prompt = false
