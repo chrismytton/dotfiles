@@ -51,9 +51,7 @@ bind-key C-a last-window
 bind-key c new-window -c "#{pane_current_path}"
 
 # Style the status bar.
-set-option -g status-bg white
-set-option -g status-fg black
-set-option -g status-left-length 30
-set-option -g status-right "#(battery -o tmux)#[fg=default]"
-set-window-option -g window-status-current-bg colour33
-set-window-option -g window-status-current-fg black
+set-option -g status-right ""
+set-option -g status-style bg=colour7
+set-option -g window-status-current-style bg=black,fg=white
+set-option -g status-left-length 50
