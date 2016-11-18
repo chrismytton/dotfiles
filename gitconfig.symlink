@@ -15,6 +15,7 @@
 	lg = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	since-yesterday = lga --since=yesterday
 	lga = lg --all
+	recent-branches = !git branch --all --sort=-committerdate | head
 [diff "ansible-vault"]
 	textconv = ansible-vault view
 	prompt = false
