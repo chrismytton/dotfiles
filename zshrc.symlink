@@ -7,9 +7,9 @@ compinit
 zstyle ':completion:*' menu select
 
 # history
-HISTFILE="${HOME}/.history/$(date -u +%Y)"
-HISTSIZE=100000
-SAVEHIST=100000
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
 
 setopt AUTO_CD
 setopt AUTO_PUSHD
