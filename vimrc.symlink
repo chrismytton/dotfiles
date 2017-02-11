@@ -20,6 +20,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'sickill/vim-pasta'
 Plugin 'ervandew/supertab'
+Plugin 'reedes/vim-pencil'
 
 " Language packs.
 Plugin 'vim-ruby/vim-ruby'
