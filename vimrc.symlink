@@ -130,5 +130,9 @@ if exists('+undofile')
   set undofile
 endif
 
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+" Use vim-pencil for markdown
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd,md call pencil#init()
+  autocmd FileType text            call pencil#init()
+augroup END
