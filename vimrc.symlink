@@ -136,3 +136,10 @@ endif
 if exists('+undofile')
   set undofile
 endif
+
+" Spell checking for markdown and commit messages
+" https://robots.thoughtbot.com/vim-spell-checking
+set spelllang=en_gb
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType gitcommit setlocal spell
+set complete+=kspell
