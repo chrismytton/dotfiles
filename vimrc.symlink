@@ -129,10 +129,3 @@ endif
 if exists('+undofile')
   set undofile
 endif
-
-" Use vim-pencil for markdown
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd,md call pencil#init()
-  autocmd FileType text            call pencil#init()
-augroup END
