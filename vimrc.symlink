@@ -102,7 +102,7 @@ nnoremap <leader>d :r!date<CR>
 nnoremap <leader>jh :r!journal-header<CR>
 
 " Map Tab to jump between brackets, quotes etc.
-nnoremap <TAB> %
+nnoremap <tab> %
 
 " Quickly jump in and out of paste mode.
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
