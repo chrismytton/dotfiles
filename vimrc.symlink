@@ -37,6 +37,8 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'wting/rust.vim'
 Plugin 'jplaut/vim-arduino-ino'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Editor configuration
 Plugin 'editorconfig/editorconfig-vim'
