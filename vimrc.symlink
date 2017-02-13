@@ -139,6 +139,9 @@ if exists('+undofile')
   set undofile
 endif
 
+" Toggle markdown folds with <tab>
+autocmd FileType markdown,mkd,md map <buffer> <tab> za
+
 " Spell checking for markdown and commit messages
 " https://robots.thoughtbot.com/vim-spell-checking
 set spelllang=en_gb
