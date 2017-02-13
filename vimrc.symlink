@@ -147,6 +147,7 @@ autocmd FileType gitcommit setlocal spell
 set complete+=kspell
 
 " Use vim-pencil for markdown
+let g:pencil#wrapModeDefault = 'soft'
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd,md call pencil#init()
