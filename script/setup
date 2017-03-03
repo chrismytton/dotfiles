@@ -19,4 +19,4 @@ fi
 
 vim +PluginInstall +PluginClean! +qall
 
-git config user.email &> /dev/null || echo "Please run 'git config --file ~/.gitconfig.local user.email user@example.com' to set git email"
+git config include.path ~/.gitconfig.local
