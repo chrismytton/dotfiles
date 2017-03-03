@@ -6,6 +6,9 @@ compinit
 
 zstyle ':completion:*' menu select
 
+# Case insensitive tab completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # history
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=10000
