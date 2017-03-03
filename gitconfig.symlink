@@ -15,7 +15,11 @@
 	lg = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	since-yesterday = lga --since=yesterday
 	lga = lg --all
-	recent-branches = !git branch --all --sort=-committerdate | head
+	recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(contents:subject) - %(authorname) %(color:green)%(committerdate:relative)%(color:reset)'
+  all-recent-branches = for-each-ref --sort=-committerdate refs --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(contents:subject) - %(authorname) %(color:green)%(committerdate:relative)%(color:reset)'
+	b = recent-branches
+	l = log --oneline
+	lm = l ...master
 [diff "ansible-vault"]
 	textconv = ansible-vault view
 	prompt = false
