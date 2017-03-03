@@ -97,10 +97,10 @@ nnoremap <silent> <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
 nnoremap <leader><leader> <C-^>
 
 " Insert timestamp
-nnoremap <leader>d :put =strftime('# %a %d %b %Y %H:%M:%S %z')<CR>
+nnoremap <leader>d :put =strftime('%a %d %b %Y %H:%M:%S %z')<CR>
 
 " Insert journal header
-nnoremap <leader>jh :r!journal-header<CR>
+nnoremap <leader>jh :put =strftime('# %a %d %b %Y %H:%M:%S %z')<CR>
 
 " Map Tab to jump between brackets, quotes etc.
 nnoremap <tab> %
@@ -122,6 +122,8 @@ command! Q :q
 set shortmess+=I
 
 let g:markdown_fenced_languages = ['ruby', 'javascript', 'html']
+let g:vim_markdown_conceal = 0
+
 
 " Provide a home for transient directories
 let s:dir = has('win32') ? '$APPDATA/Vim' : match(system('uname'), "Darwin") > -1 ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
@@ -140,8 +142,12 @@ if exists('+undofile')
   set undofile
 endif
 
-" Toggle markdown folds with <tab>
-autocmd FileType markdown,mkd,md map <buffer> <tab> za
+" Toggle markdown and ledger folds with <tab>
+autocmd FileType markdown,mkd,md,ledger map <buffer> <tab> za
+
+" Save and load folds when opening and closing files
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
 
 " Spell checking for markdown and commit messages
 " https://robots.thoughtbot.com/vim-spell-checking
