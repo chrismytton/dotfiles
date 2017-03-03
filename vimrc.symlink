@@ -39,6 +39,7 @@ Plugin 'wting/rust.vim'
 Plugin 'jplaut/vim-arduino-ino'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'ledger/vim-ledger'
 
 " Editor configuration
 Plugin 'editorconfig/editorconfig-vim'
