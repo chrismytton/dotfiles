@@ -51,7 +51,7 @@ bind-key C-a last-window
 bind-key c new-window -c '#{pane_current_path}'
 
 # Style the status bar.
-set-option -g status-right ""
+set-option -g status-right '%a %d %h %H:%M #{battery_status_bg} #{battery_percentage} '
 set-option -g status-style bg=colour7
 set-option -g window-status-current-style bg=black,fg=white
 set-option -g window-status-last-style bg=colour15
