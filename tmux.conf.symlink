@@ -27,8 +27,8 @@ set-option -g history-limit 5000
 
 # More intuitive window splitting.
 unbind-key %
-bind-key | split-window -h
-bind-key - split-window -v
+bind-key | split-window -h -c '#{pane_current_path}'
+bind-key - split-window -v -c '#{pane_current_path}'
 
 # Don't wait after pressing escape.
 set-option -g escape-time 0
@@ -48,7 +48,7 @@ bind-key C-k resize-pane -U 5
 # Quickly cycle between windows.
 bind-key C-a last-window
 
-bind-key c new-window
+bind-key c new-window -c '#{pane_current_path}'
 
 # Style the status bar.
 set-option -g status-right ""
