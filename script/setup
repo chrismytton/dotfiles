@@ -18,5 +18,3 @@ if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
 fi
 
 vim +PluginInstall +PluginClean! +qall
-
-git config include.path ~/.gitconfig.local
