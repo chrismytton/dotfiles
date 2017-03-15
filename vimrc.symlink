@@ -145,10 +145,6 @@ endif
 " Toggle markdown and ledger folds with <tab>
 autocmd FileType markdown,mkd,md,ledger map <buffer> <tab> za
 
-" Save and load folds when opening and closing files
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
-
 " Spell checking for markdown and commit messages
 " https://robots.thoughtbot.com/vim-spell-checking
 set spelllang=en_gb
