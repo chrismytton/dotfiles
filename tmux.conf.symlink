@@ -61,3 +61,12 @@ set-option -g mode-style bg=white
 set-option -g pane-border-style fg=white
 set-option -g pane-active-border-style fg=black
 set-option -g window-status-separator "  "
+
+# Plugins
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-sessionist'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
