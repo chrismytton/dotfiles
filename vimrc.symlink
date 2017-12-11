@@ -40,6 +40,7 @@ Plugin 'jplaut/vim-arduino-ino'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ledger/vim-ledger'
+Plugin 'vim-scripts/sparql.vim'
 
 " Editor configuration
 Plugin 'editorconfig/editorconfig-vim'
@@ -144,6 +145,8 @@ endif
 
 " Toggle markdown and ledger folds with <tab>
 autocmd FileType markdown,mkd,md,ledger map <buffer> <tab> za
+autocmd FileType go setlocal nolist
+autocmd BufRead,BufNewFile *.sparql setlocal filetype=sparql
 
 " Spell checking for markdown and commit messages
 " https://robots.thoughtbot.com/vim-spell-checking
