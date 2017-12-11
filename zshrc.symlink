@@ -63,7 +63,6 @@ done
 
 # Setup prompt
 PROMPT='%B%~%b$(git_super_status) %(?..%F{red})%#%f '
-RPROMPT='%(?..%F{red}%?%f)'
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
