@@ -169,3 +169,6 @@ let g:vim_markdown_folding_disabled = 1
 " Show pencil mode in status line.
 set statusline=%<%f\ %h%m%r%w\ \ %{PencilMode()}\ %=\ col\ %c%V\ \ line\ %l\,%L\ %P
 set rulerformat=%-12.(%l,%c%V%)%{PencilMode()}\ %P
+
+highlight ColorColumn ctermbg=lightgrey
+call matchadd('ColorColumn', '\%81v', 100)"

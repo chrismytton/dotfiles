@@ -54,3 +54,4 @@ DerivedData
 .env
 .ruby-version
 .python-version
+/.vscode/

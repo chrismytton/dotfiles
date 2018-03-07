@@ -97,3 +97,7 @@ export HOMEBREW_INSTALL_BADGE='👍'
 
 # Put custom zsh config into *.zsh file in the ~/.zsh directory
 [ -d $HOME/.zsh ] && for file ($HOME/.zsh/**/*.zsh) source $file
+
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+
