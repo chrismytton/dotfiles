@@ -52,6 +52,6 @@ bind-key c new-window -c '#{pane_current_path}'
 
 # Style the status bar.
 set-option -g status-right '%a %-d %b %R'
-set-option -g status-style bg=colour0
+set-option -g status-style "bg=colour0 fg=colour7"
 set-option -g status-left-length 50
 set-option -g window-status-separator "  "
