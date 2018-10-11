@@ -88,9 +88,6 @@ alias ber='bundle exec ruby'
 alias git=hub
 alias g=git
 
-# Speed up nokogiri installs.
-export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
-
 export VISUAL='vim -f'
 
 export HOMEBREW_INSTALL_BADGE='👍'
