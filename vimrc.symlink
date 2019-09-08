@@ -15,19 +15,11 @@ Plug 'sickill/vim-pasta'
 Plug 'ervandew/supertab'
 Plug 'reedes/vim-pencil'
 Plug 'junegunn/goyo.vim'
+Plug 'godlygeek/tabular'
 
 " Language packs.
-Plug 'vim-ruby/vim-ruby'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
-Plug 'pangloss/vim-javascript'
-Plug 'fatih/vim-go'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'honza/dockerfile.vim'
-Plug 'rodjek/vim-puppet'
-Plug 'chase/vim-ansible-yaml'
-Plug 'wting/rust.vim'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 
 " Editor configuration
 Plug 'editorconfig/editorconfig-vim'
