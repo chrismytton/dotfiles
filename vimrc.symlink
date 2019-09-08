@@ -1,13 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-" Defaults everyone can agree on
 Plug 'tpope/vim-sensible'
-
-" File navigation and git integration.
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-
-" Editing helpers.
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -16,16 +11,19 @@ Plug 'ervandew/supertab'
 Plug 'reedes/vim-pencil'
 Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
-
-" Language packs.
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
-
-" Editor configuration
 Plug 'editorconfig/editorconfig-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " All Plugs must be added before the following line
 call plug#end()
+
+colorscheme solarized
+
+let g:airline_powerline_fonts = 1
 
 set tabstop=2
 set shiftwidth=2
