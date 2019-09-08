@@ -1,53 +1,39 @@
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Defaults everyone can agree on
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " File navigation and git integration.
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 
 " Editing helpers.
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'sickill/vim-pasta'
-Plugin 'ervandew/supertab'
-Plugin 'reedes/vim-pencil'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'sickill/vim-pasta'
+Plug 'ervandew/supertab'
+Plug 'reedes/vim-pencil'
+Plug 'junegunn/goyo.vim'
 
 " Language packs.
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-Plugin 'pangloss/vim-javascript'
-Plugin 'groenewege/vim-less'
-Plugin 'fatih/vim-go'
-Plugin 'nono/vim-handlebars'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'honza/dockerfile.vim'
-Plugin 'rodjek/vim-puppet'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'wting/rust.vim'
-Plugin 'jplaut/vim-arduino-ino'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'ledger/vim-ledger'
-Plugin 'vim-scripts/sparql.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'pangloss/vim-javascript'
+Plug 'fatih/vim-go'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'honza/dockerfile.vim'
+Plug 'rodjek/vim-puppet'
+Plug 'chase/vim-ansible-yaml'
+Plug 'wting/rust.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Editor configuration
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
-" All Plugins must be added before the following line
-call vundle#end()
-filetype plugin indent on
+" All Plugs must be added before the following line
+call plug#end()
 
 set tabstop=2
 set shiftwidth=2
