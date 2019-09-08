@@ -11,10 +11,7 @@ for source in **/*.symlink; do
   fi
 done
 
-mkdir -p "$HOME/.vim/bundle"
-if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
-  echo "Cloning vundle" >&2
-  git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
-fi
+curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-vim +PluginInstall +PluginClean! +qall
+vim +PlugInstall +PlugClean! +qall
