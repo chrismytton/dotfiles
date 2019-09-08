@@ -28,6 +28,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set linebreak
+set number
+set numberwidth=5
 
 set clipboard=unnamed           " fix clipboard access in terminal
 
