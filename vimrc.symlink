@@ -18,6 +18,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'plasticboy/vim-markdown'
+Plug 'wakatime/vim-wakatime'
 
 " All Plugs must be added before the following line
 call plug#end()
