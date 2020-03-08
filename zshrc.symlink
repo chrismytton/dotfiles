@@ -12,6 +12,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY_TIME
+
+# Make it easier to curl URLs with ? in them without escaping/quoting
 unsetopt NOMATCH
 
 # Tab completion menu
