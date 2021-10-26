@@ -57,3 +57,5 @@ DerivedData
 /.vscode/
 .vstags
 .envrc
+.venv
+/.notepad

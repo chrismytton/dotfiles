@@ -19,10 +19,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'plasticboy/vim-markdown'
 Plug 'wakatime/vim-wakatime'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " All Plugs must be added before the following line
 call plug#end()
 
+let g:solarized_termcolors=256
 colorscheme solarized
 
 set tabstop=2

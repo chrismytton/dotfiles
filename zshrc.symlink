@@ -52,6 +52,10 @@ if [ -d "$HOME/.bin" ]; then
   path=($HOME/.bin $path)
 fi
 
+if [ -d "$HOME/.private-bin" ]; then
+  path=($HOME/.private-bin $path)
+fi
+
 # zoxide - better cd (https://github.com/ajeetdsouza/zoxide)
 eval "$(zoxide init zsh)"
 
@@ -86,3 +90,5 @@ export HOMEBREW_INSTALL_BADGE='👍'
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+
+eval "$(pyenv init -)"

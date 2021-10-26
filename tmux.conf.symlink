@@ -1,5 +1,5 @@
 # Full color terminal support.
-set -g default-terminal "screen-256color"
+# set -g default-terminal "screen-256color"
 
 # Make copy/paste work properly in MacVim.
 # See: https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
