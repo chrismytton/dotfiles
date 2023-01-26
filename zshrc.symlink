@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # completions
-fpath=(/usr/local/share/zsh-completions ~/.zfunc $fpath)
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions ~/.zfunc $fpath)
 
 autoload compinit
 compinit
