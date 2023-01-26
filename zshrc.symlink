@@ -93,6 +93,8 @@ export HOMEBREW_INSTALL_BADGE='👍'
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
+export GPG_TTY=$(tty)
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
