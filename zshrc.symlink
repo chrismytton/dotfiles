@@ -81,6 +81,15 @@ alias ber='bundle exec ruby'
 
 # git aliases
 alias g=git
+alias gst='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gc='git commit -v'
+alias gca='git commit -va'
+alias ga='git add'
+alias gg='git grep'
+alias gb='git --no-pager branch -vv --sort=committerdate'
+alias gco='git checkout'
 
 export VISUAL='nvim -f'
 
