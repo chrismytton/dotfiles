@@ -80,7 +80,6 @@ alias bu='bundle update'
 alias ber='bundle exec ruby'
 
 # git aliases
-alias git=hub
 alias g=git
 
 export VISUAL='nvim -f'
