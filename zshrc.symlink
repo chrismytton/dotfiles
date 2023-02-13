@@ -67,6 +67,14 @@ eval "$(starship init zsh)"
 # Use rbenv for managing ruby versions.
 eval "$(rbenv init - --no-rehash)"
 
+# Use direnv for managing environment variables.
+eval "$(direnv hook zsh)"
+
+# Source zsh-autosuggestions if it's installed.
+if [ -f $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
@@ -103,6 +111,14 @@ bindkey "^[[B" history-search-forward
 
 export GPG_TTY=$(tty)
 
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
+take() {
+  mkdir -p "$1"
+  cd "$1"
+}
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
