@@ -55,7 +55,3 @@ set-option -g status-right ''
 set-option -g status-style "bg=colour0 fg=colour7"
 set-option -g status-left-length 50
 set-option -g window-status-separator "  "
-
-# Fig Tmux Integration: Enabled
-source-file ~/.fig/tmux
-# End of Fig Tmux Integration
