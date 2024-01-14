@@ -8,17 +8,12 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'sickill/vim-pasta'
 Plug 'ervandew/supertab'
-Plug 'reedes/vim-pencil'
-Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rails'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'plasticboy/vim-markdown'
-Plug 'wakatime/vim-wakatime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -110,23 +105,6 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 
-" Provide a home for transient directories
-let s:dir = has('win32') ? '$APPDATA/Vim' : match(system('uname'), "Darwin") > -1 ? '~/Library/Vim' : empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
-if isdirectory(expand(s:dir))
-  if &directory =~# '^\.,'
-    let &directory = expand(s:dir) . '/swap//,' . &directory
-  endif
-  if &backupdir =~# '^\.,'
-    let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
-  endif
-  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-    let &undodir = expand(s:dir) . '/undo//,' . &undodir
-  endif
-endif
-if exists('+undofile')
-  set undofile
-endif
-
 " Toggle markdown and ledger folds with <tab>
 autocmd FileType markdown,mkd,md,ledger map <buffer> <tab> za
 autocmd FileType go setlocal nolist
@@ -138,14 +116,3 @@ set spelllang=en_gb
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 set complete+=kspell
-
-" Use vim-pencil for markdown
-let g:pencil#wrapModeDefault = 'soft'
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd,md call pencil#init()
-  autocmd FileType text            call pencil#init()
-augroup END
-
-" Show pencil mode in status line.
-let g:airline_section_x = '%{PencilMode()}'
